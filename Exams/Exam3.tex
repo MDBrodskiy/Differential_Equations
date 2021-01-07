@@ -1,0 +1,195 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Differential Equations (MATH-294)
+% Professor: M. Shah
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article} 
+\usepackage{alphalph}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage[super]{nth}
+\usepackage{everysel}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{siunitx}
+\geometry{top=1.0in,bottom=1.0in,left=1.0in,right=1.0in}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+
+}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,      
+urlcolor=blue,
+citecolor=blue,
+}
+
+\urlstyle{same}
+
+
+\title{Differential Equations $-$ Exam Three}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: Meetal Shah}
+
+% Mathematical Operations:
+
+% Sum: $$\sum_{n=a}^{b} f(x) $$
+% Integral: $$\int_{lower}^{upper} f(x) dx$$
+% Limit: $$\lim_{x\to\infty} f(x)$$
+
+\begin{document}
+
+\maketitle
+
+\hline
+\begin{equation}
+  \begin{split}
+    (e^t-e^{-t})^2&=e^{2t}+e^{-2t}-2\\
+    \mathcal{L}\left\{ e^{2t}+e^{-2t}-2 \right\}&=\frac{1}{s-2}+\frac{1}{s+2}-\frac{2}{s}\\
+  \end{split}
+  \label{1}
+\end{equation}
+\hline
+
+\begin{equation}
+  \begin{split}
+    \mathcal{L}^{-1}\left\{ \frac{4}{s}+\frac{6}{s^5}-\frac{1}{s+8} \right\}&=4+\frac{1}{4}t^4-e^{-8t}
+  \end{split}
+  \label{2}
+\end{equation}
+
+\hline
+\begin{equation}
+  \begin{split}
+    \mathcal{L}^{-1}\left\{ \frac{1}{s^2+s-20} \right\}\\
+    \frac{1}{s^2+s-20}=\frac{1}{\left(s-\frac{1}{2}\right)^2-\frac{81}{4}}\\
+    \mathcal{L}^{-1}\left\{ \frac{1}{s^2+s-20} \right\}=\frac{2}{9}e^{-\frac{1}{2}t}\cdot\sinh\left( \frac{9}{2}t \right)
+  \end{split}
+  \label{3}
+\end{equation}
+
+\hline
+\begin{equation}
+  \begin{split}
+    \mathcal{L}\left\{ y''+y=\sin(t) \right\}\rightarrow s^2F(s)-s+1+F(s)=\frac{1}{s^2+1}\\
+    F(s)=\frac{1}{\left( s^2+1 \right)^2}+\frac{s}{s^2+1}-\frac{1}{s^2+1}\\
+    y(t)=\frac{\sin(t)-t\cos(t)}{2}+\cos(t)-\sin(t)
+  \end{split}
+  \label{4}
+\end{equation}
+
+\hline
+\begin{equation}
+  \begin{split}
+    \mathcal{L}\left\{ y'+y=\delta(t-1) \right\}\rightarrow sF(s)-2+F(s)=e^{-s}\\
+    F(s)=\frac{e^{-s}}{s+1}+\frac{2}{s+1}\\
+    y(t)=2e^{-t}+e^{-(t-1)}\mathcal{U}(t-1)
+  \end{split}
+  \label{5}
+\end{equation}
+\hline
+
+\newpage
+\hline
+
+\begin{equation}
+  \begin{split}
+    \bold{X}'=\begin{pmatrix} 2 & 2 \\ 1 & 3  \end{pmatrix}\bold{X}\\
+    \begin{vmatrix} 2-\lambda & 2\\ 1 & 3-\lambda \end{vmatrix}=(\lambda-1)(\lambda-4)\\
+    \lambda_n=1,4\\
+    \text{When }\lambda_n=1\\
+    \begin{pmatrix} 1 & 2 \\ 1 & 2 \end{pmatrix} \\
+    k_1=2,\,\,\,k_2=-1\\
+    \text{When }\lambda_n=4\\
+    \begin{pmatrix} -2 & 2 \\ 1 & -1 \end{pmatrix} \\
+    k_1=1,\,\,\,k_2=1\\
+    \begin{pmatrix} x(t) \\ y(t) \end{pmatrix}=c_1\begin{pmatrix} 2 \\ -1 \end{pmatrix}e^{t}+c_2\begin{pmatrix} 1 \\ 1\end{pmatrix}e^{4t}
+  \end{split}
+  \label{6}
+\end{equation}
+\hline
+
+
+\begin{equation}
+  \begin{split}
+    \text{Euler: }y''(c)\cdot\frac{h^2}{2!}\\
+    y'(x)=2e^{2x}\\
+    y''(x)=4e^{2x}\\
+    0\leq c\leq .1\\
+    .1^2=\frac{1}{100}\\
+    \therefore \text{The bound is: } \frac{e^{\frac{1}{5}}}{50}
+  \end{split}
+  \label{7}
+\end{equation}
+\hline
+
+\begin{equation}
+  \begin{split}
+    f(x,y)=4x-2y
+    k_1=f(0,2)=-4\\
+    k_2=f(.05,1.8)=-3.4\\
+    k_3=f(.05,1.83)=-3.46\\
+    k_4=f(.1,1.654)=-2.908\\
+        RK4=2+.1\left( \frac{k_1}{6}+\frac{k_2}{3}+\frac{k_3}{3}+\frac{k_4}{6} \right)\\
+        RK4=1.6562
+  \end{split}
+  \label{8}
+\end{equation}
+
+
+\hline
+\newpage
+\hline
+\begin{equation}
+  \begin{split}
+    \int_{\frac{\pi}{4}}^{\frac{5\pi}{4}}e^x\sin x \, dx\\
+    -e^x\cos(x)+\int e^x\cos(x)\, dx \\
+    \frac{e^x(\sin(x)-\cos(x))}{2}\Big|_{\frac{\pi}{4}}^{\frac{5\pi}{4}}\\
+    \cos(x)=\sin(x) \text{ at } \frac{\pi}{4} \text{ and } \frac{5\pi}{4}\\
+    \therefore \text{This integral equals zero, so the functions are orthogonal}
+  \end{split}
+  \label{9}
+\end{equation}
+
+\hline
+\begin{equation}
+  \begin{split}
+    a_o=\frac{1}{\pi}\left(-\int_{-\pi}^0\,dx+2\int_0^{\pi}\,dx\right)\\
+    \frac{1}{\pi}\left( -\pi+2\pi \right)=1\\
+    \frac{a_o}{2}=\frac{1}{2}\\
+    a_n=\frac{1}{\pi}\left(-\int_{-\pi}^0\cos(nx)\,dx+2\int_0^{\pi}\cos(nx)\,dx\right)\\
+    a_n=0\\
+    b_n=\frac{1}{\pi}\left(-\int_{-\pi}^0\sin(nx)\,dx+2\int_0^{\pi}\sin(nx)\,dx\right)\\
+    b_n=\frac{3+(-1)^n}{\pi}\\
+    f(x)=\frac{1}{2}+\sum_{n=1}^{\infty} \left( \frac{3+(-1)^n}{\pi} \right)\sin(nx)\\
+  \end{split}
+  \label{10}
+\end{equation}
+\hline
+
+\begin{equation}
+  \begin{split}
+    \mathcal{L}\left\{ t^2\ast te^t \right\}=&\mathcal{L}\left\{ t^2 \right\}\cdot\mathcal{L}\left\{ te^t \right\}\\
+    \mathcal{L}\left\{ t^2 \right\}=&\frac{2}{s^3}\\
+    \mathcal{L}\left\{ te^t \right\}=&\frac{1}{(s-1)^2}\\
+    \mathcal{L}\left\{ t^2\ast te^t \right\}=&\frac{2}{s^3(s-1)^2}
+  \end{split}
+  \label{11}
+\end{equation}
+\hline
+
+\end{document}
+

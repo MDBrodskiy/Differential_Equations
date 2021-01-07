@@ -1,0 +1,243 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Differential Equations (MATH-294)
+% Professor: M. Shah
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article} 
+\usepackage{alphalph}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage[super]{nth}
+\usepackage{everysel}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{siunitx}
+\geometry{top=1.0in,bottom=1.0in,left=1.0in,right=1.0in}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+
+}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,      
+urlcolor=blue,
+citecolor=blue,
+}
+
+\urlstyle{same}
+
+
+\title{Differential Equations $-$ Exam Two}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: Meetal Shah}
+
+% Mathematical Operations:
+
+% Sum: $$\sum_{n=a}^{b} f(x) $$
+% Integral: $$\int_{lower}^{upper} f(x) dx$$
+% Limit: $$\lim_{x\to\infty} f(x)$$
+
+\begin{document}
+
+\maketitle
+
+\hline
+\begin{equation}
+  \begin{split}
+    f_1'(x)&=e^{x+2}\\
+    f_2'(x)&=e^{x-3}\\
+    W&=\begin{vmatrix} e^{x+2} & e^{x-3} \\ e^{x+2} & e^{x-3}\\  \end{vmatrix}\\
+    \left( e^{x+2} \right)e^{x-3}-\left( e^{x-3} \right)e^{x-2}&=0\\
+  \text{The Wronskian may be used to determine dependence. } \\
+  \text{In this case, it equals zero, signifying linear dependence}\\
+  \end{split}
+  \label{1}
+\end{equation}
+\hline
+
+\begin{equation}
+  \begin{split}
+    y_2(x)&=y_1(x)\int\frac{e^{-\int P(x)\,dx}}{(y_1(x))^2}\,dx\\
+    y_1(x)&=x^4\\
+    P(x)&=\frac{-7}{x}\\
+    e^{\int \frac{7}{x}\,dx}&=x^7\\
+    y_2(x)&=x^4\left( \int \frac{x^7}{(x^4)^2}\,dx \right)\\
+    x^4\left( \int \frac{1}{x}\,dx \right)&=x^4\ln(x)\\
+  \end{split}
+  \label{2}
+\end{equation}
+
+\hline
+\begin{equation}
+  \begin{split}
+    y^{(4)}+y'''+y''=0\\
+    m^4+m^3+m^2=0\\
+    m^2(m^2+m+1)=0\\
+    m=0,0,-\frac{1}{2}\pm\frac{\sqrt{3}}{2}i\\
+    y(x)=y_c(x)+y_p(x)=c_1+c_2x+e^{-\frac{1}{2}x}\left( c_3\sin \frac{\sqrt{3}}{2}x + c_4\cos \frac{\sqrt{3}}{2}x \right)\\
+  \end{split}
+  \label{3}
+\end{equation}
+
+\hline
+\begin{equation}
+  \begin{split}
+    y''+2y'=2x+5-e^{-2x}\\
+    m^2+2m=0\\
+    m(m+2)=0\\
+    m=0,-2\\
+    y_c(x)=c_1+c_2e^{-2x}\\
+    y_p(x)=(Ax^2+Bx)-Cxe^{-2x}\\
+    y_p(x)'=2Ax+B-Ce^{-2x}+2Cxe^{-2x}\\
+    y_p(x)''=2A+4Ce^{-2x}-4Cxe^{-2x}\\
+    2A+2Ce^{-2x}+4Ax+2B=2x+5-e^{-2x}\\
+    4A=2\rightarrow A=\frac{1}{2}\\
+    2A+2B=5\rightarrow B=2\\
+    2C=-1\rightarrow C=-\frac{1}{2}\\
+    y_p(x)=\frac{1}{2}x^2+2x+\frac{1}{2}xe^{-2x}\\
+    y(x)=y_p(x)+y_c(x)\\
+    y(x)=c_1+c_2e^{-2x}+\frac{1}{2}x^2+2x+\frac{1}{2}xe^{-2x}
+  \end{split}
+  \label{4}
+\end{equation}
+
+\hline
+\begin{equation}
+  \begin{split}
+    (2-e^x)^2=4-4e^x+e^{2x}\\
+    \text{Annihilator: } D(D-1)(D-2)\\
+  \end{split}
+  \label{5}
+\end{equation}
+\hline
+
+\begin{equation}
+  \begin{split}
+    y''+3y'+2y=\sin(e^x)\\
+    m^2+3m+2=0\\
+    (m+1)(m+2)=0\\
+    m=-1,-2\\
+    y_c(x)=c_1e^{-x}+c_2e^{-2x}\\
+    y_1(x)=e^{-x}; y_2(x)=e^{-2x}\\
+    f(x)=\sin(e^x)\\
+    W=\begin{vmatrix} e^{-x} & e^{-2x} \\ -e^{-x} & -2e^{-2x} \end{vmatrix}\\
+    =-e^{-3x}\\
+    u_1(x)=-\int \left( \frac{y_2(t)f(t)}{W(t)} \right)\,dx\\
+    -\int\left( \frac{e^{-2x}\sin(e^x)}{-e^{-3x}} \right)\,dx=\int e^x\sin(e^x)\\
+    u=e^x\rightarrow\int \sin(u)\,du\\
+    u_1(x)=-\cos(e^x)\\
+    u_2(x)=\int \left( \frac{y_1(t)f(t)}{W(t)} \right)\,dx\\
+    -\int\left( \frac{e^{-x}\sin(e^x)}{e^{-3x}} \right)\,dx=-\int e^{2x}\sin(e^x)\\
+    u=e^x\rightarrow-\int u\sin(u)\,du\\
+    u_2(x)=e^x\cos(e^x)-\sin(e^x)\\
+    y(x)=c_1e^{-x}+c_2e^{-2x}+e^{-x}(-\cos(e^x))+e^{-2x}(e^x\cos(e^x)-\sin(e^x))\\
+  \end{split}
+  \label{6}
+\end{equation}
+\hline
+
+
+\begin{equation}
+  \begin{split}
+    (D+3)D^2x-D(D+3)y=1+3t\\
+    (D+3)D^2x+D^2(D+3)y=0\\
+  (-D^3-4D^2-3D)y=0\\
+  m^3+4m^2+3m=0\\
+  m(m^2+4m+3)=0\\
+  m=0,-1,-3\\
+  y(x)=c_1+c_2e^{-x}+c_3e^{-3x}\\
+  \end{split}
+  \label{7}
+\end{equation}
+\hline
+
+\begin{equation}
+  \begin{split}
+    F=kx\\
+    k=2\\
+    8=m\cdot32\\
+    m=\frac{1}{4}\\
+    x(0)=0; x'(0)=5\\
+    D^2x+4\sqrt{2}Dx+8x=0\\
+    \lambda=2\sqrt{2}\\
+    \omega=\sqrt{8}\\
+    \lambda^2-\omega^2=0\\
+    x(t)=e^{-2\sqrt{2}t}(c_1+c_2t)\\
+    c_1=0\\
+    x(t)=c_2te^{-2\sqrt{2}t}\\
+    x'(t)=c_2e^{-2\sqrt{2}t}-2\sqrt{2}c_2te^{-2\sqrt{2}t}\\
+    c_2=5\\
+    x(t)=5te^{-2\sqrt{2}t}\\
+    x'(t)=5e^{-2\sqrt{2}t}-10\sqrt{2}te^{-2\sqrt{2}t}\\
+    5e^{-2\sqrt{2}t}-10\sqrt{2}te^{-2\sqrt{2}t}=0\\
+    5e^{-2\sqrt{2}t}(1-2\sqrt{2}t)\\
+    t=\frac{1}{2\sqrt{2}}\\
+    x(\frac{1}{2\sqrt{2}})=.65\\
+  \end{split}
+  \label{8}
+\end{equation}
+
+
+\hline
+\begin{equation}
+  \begin{split}
+    L=\frac{\pi}{2}\\
+    \lambda_n=\left( \frac{(2n-1)\pi}{2L} \right)^2\\
+    \lambda_n=\left( \frac{(2n-1)^2\cancel{\pi^2}}{\cancel{\pi^2}} \right)\\
+    \lambda_n=(2n-1)^2\\
+    y_n(x)=\sin\left( (2n-1)x \right)\\
+  \end{split}
+  \label{9}
+\end{equation}
+
+\hline
+\begin{equation}
+  \begin{split}
+    y=\sum_{n=0}^{\infinity} c_nx^n\\
+    y'=\sum_{n=1}^{\infinity} nc_nx^{n-1}\\
+    y''=\sum_{n=2}^{\infinity} n(n-1)c_nx^{n-2}\\
+    \sum_{n=2}^{\infinity} n(n-1)c_nx^{n-2}+\sum_{n=0}^{\infinity} c_nx^{n+2}\\
+    \sum_{k=0}^{\infinity} [(k+2)(k+1)c_{k+2}+c_k]x^{k}\\
+    y_1(x)=c_0-\frac{c_0}{2}x^2+\frac{c_0}{24}x^4\dots\\
+    y_2(x)=c_1x-\frac{c_1}{6}x^3+\frac{c_1}{120}x^5\dots\\
+  \end{split}
+  \label{10}
+\end{equation}
+\hline
+
+\begin{equation}
+  \begin{split}
+    q_p(t)=?\\
+    D^2q+2Dq+4q=50\cos t\\
+    m^2+2m+4=0\\
+    m=-1\pm\sqrt{3}i\\
+    \text{Terms do not coincide with } y_p(x)\\
+    q_p(x)=A\cos t + B\sin t\\
+    q_p(x)'=-A\sin t + B\cos t\\
+    q_p(x)''=-A\cos t - B\sin t\\
+    (3A+2B)\cos(t)+(3B-2A)\sin(t)=50\cos(t)\\
+    (3A+2B)=50\\
+    (3B-2A)=0\\
+    A=\frac{150}{13}\\
+    B=\frac{100}{13}\\
+    q_p(t)=\frac{150}{13}\cos t + \frac{100}{13}\sin t
+  \end{split}
+  \label{11}
+\end{equation}
+\hline
+
+\end{document}
+
