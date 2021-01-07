@@ -1,0 +1,119 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Differential Equations (MATH-294)
+% Professor: M. Shah
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article} 
+\usepackage{alphalph}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage[super]{nth}
+\usepackage{everysel}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{siunitx}
+\geometry{top=1.0in,bottom=1.0in,left=1.0in,right=1.0in}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+
+}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,      
+urlcolor=blue,
+citecolor=blue,
+}
+
+\urlstyle{same}
+
+
+\title{Homogeneous Linear Equations with Constant Coefficients}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: Meetal Shah}
+
+% Mathematical Operations:
+
+% Sum: $$\sum_{n=a}^{b} f(x) $$
+% Integral: $$\int_{lower}^{upper} f(x) dx$$
+% Limit: $$\lim_{x\to\infty} f(x)$$
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item Given $ay'+by=0$, we can solve the differential equation by using something close to a guess by using $y=e^{mx}$ \eqref{1}
+
+    \begin{equation}
+      \begin{split}
+        ay'+by=0\\
+        y=e^{mx},\,y'=me^{mx}\\
+        e^{mx}(am+b)=0\\
+        m=\frac{-b}{a}\\
+        y=c_1e^{\frac{-b}{a}}
+      \end{split}
+      \label{1}
+    \end{equation}
+
+  \item For the differential equation $ay''+by'+cy=0$, we may use the following method \eqref{2}
+
+    \begin{equation}
+      \begin{split}
+        ay''+by'+cy=0\\
+        y=e^{mx},\,y'=me^{mx},\,y''=m^2e^{mx}\\
+        e^{mx}(am^2+bm+c)=0\\
+        am^2+bm+c=0
+      \end{split}
+      \label{2}
+    \end{equation}
+
+  \item If the quadratic obtained in \eqref{2} has no real (and therefore imaginary) solutions, Euler's formula is used \eqref{3}
+
+    \begin{equation}
+      e^{i\theta}=\cos \theta + i\sin \theta
+      \label{3}
+    \end{equation}
+
+  \item Two important equations to know are \eqref{4}
+
+    \begin{equation}
+      \begin{split}
+        y''+k^2y=0\\
+        y''-k^2y=0\\
+        m^2+k^2=0 &\,\,\,\,\, m^2-k^2=0\\
+      \end{split}
+      \label{4}
+    \end{equation}
+
+  \item For higher order equations \eqref{5} a same solution could be applied \eqref{6}
+
+    \begin{equation}
+      a_nm^n+a_{n-1}m^{n-1}+\dots+a_2m^2+a_1m+a_0=0
+      \label{5}
+    \end{equation}
+
+    \begin{equation}
+      y=c_1e^m_1x+c_2e^m_2x+\dots+c_ne^m_nx
+      \label{6}
+    \end{equation}
+
+
+
+\end{itemize}
+
+\end{document}
+

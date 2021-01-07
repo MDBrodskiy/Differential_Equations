@@ -1,0 +1,131 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Differential Equations (MATH-294)
+% Professor: M. Shah
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article} 
+\usepackage{alphalph}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage[super]{nth}
+\usepackage{everysel}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{siunitx}
+\geometry{top=1.0in,bottom=1.0in,left=1.0in,right=1.0in}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+
+}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,      
+urlcolor=blue,
+citecolor=blue,
+}
+
+\urlstyle{same}
+
+
+\title{Differential Equations}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: Dr. Meetal Shah}
+
+% Mathematical Operations:
+
+% Sum: $$\sum_{n=a}^{b} f(x) $$
+% Integral: $$\int_{lower}^{upper} f(x) dx$$
+% Limit: $$\lim_{x\to\infty} f(x)$$
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item Differential Equation $-$ An equation containing the derivatives of one or more unknown functions (or dependent variables), with respect to one or more independent variables
+
+  \item Ordinary Differential Equation $-$ A differential equation that contains only ordinary derivatives of one or more unknown functions with respect to a single independent variable. Shortened to ODE
+
+  \item Partial Differential Equation $-$ A differential equation that contains partial derivatives of one or more unknown functions with respect to multiple independent variables. Shortened to PDE
+
+  \item Ordinary derivatives will be written in two notations:
+
+    \begin{enumerate}
+
+      \item Leibniz Notation $\rightarrow$ $dy/dx\,,d^2y/dx^2\,,d^3y/dx^3$
+
+      \item Prime Notation $\rightarrow$ $y'\,,y''\,,y'''$
+
+      \item (Not used often) Newton's Notation $\rightarrow$ $\dot y\,,\ddot y\,, \dddot y$
+
+    \end{enumerate}
+
+  \item Partial derivatives may use Leibniz notation or:
+
+    \begin{enumerate}
+
+      \item Subscript Notation $\rightarrow$ $f_x\,,f_y\,,f_{xx}\,,f_{xy}\,,f_{yy}$
+
+    \end{enumerate}
+
+  \item The order of a differential equation (ODE or PDE) is determined by the highest derivative in the equation
+
+  \item A first-order differential equation may be written in differential form:
+
+    $$M(x,y)\,dx+H(x,y)\,dy=0$$
+
+  \item Normal Form $-$ The result of finding an equation where the highest-order derivative is set equal to all else:
+
+    $$\frac{d^ny}{dx^n}=f(x,y,y',\dots,y^{(n-1)})$$
+    
+    \begin{center} For more common derivatives this looks as follows: \end{center}
+
+    $$\frac{dy}{dx}=f(x,y)\,\,\,\,\,\frac{d^2y}{dx^2}=f(x,y,y')$$
+
+  \item An ordinary differential equation is said to be \underline{linear} if $F$ is linear in $y$, $y'$,\dots,$y^n$. This means that the nth-order ODE is linear in this form:
+
+    $$a_n(x)y^n+a_{n-1}(x)y^{n-1}+\dots+a_1(x)y'+a_0(x)y-g(x)=0$$
+
+  \item A nonlinear ordinary differential equation is simply one that is not linear
+
+  \item Two important special cases of linear ODEs are as follows:
+
+    $$a_1(x)\frac{dy}{dx}+a_0(x)y=g(x)\text{ and }a_2(x)\frac{d^2y}{dx^2}+a_1(x)\frac{dy}{dx}+a_0(x)=g(x)$$
+
+  \item Any function $\phi$, defined on an interval $I$, and possessing at least $n$ derivatives that are continuous on $I$, which when substituted into an $n$th-order ODE reduces the equation to an identity, is said to be a \underline{solution} of the equation on the interval
+
+
+  \item The interval upon which a solution exists may be called many names: interval of definition, interval of existence, interval of validity, or domain of the solution
+
+  \item Trivial Solution $-$ A solution of a differential equation that is identically zero on an interval $I$
+
+  \item The graph of a solution $\phi$ of an ODE is called a solution curve. Because of $\phi$'s differentiability, it is continuous. This means that the domain of $\phi$ may have a domain bigger or smaller than that of the domain of the solution
+
+  \item A relation $G(x,y)=0$ is said to be an implicit solution of an ordinary differential equation on an interval $I$, provided that there exists at least one function $\phi$ that satisfies the relation as well as the differential equation on $I$
+
+  \item A solution of $F(x,y,y')=0$ containing a constant $c$ is a set of solutions $G(x,y,c)=0$ called a one-parameter family of solutions
+
+  \item When solving an $n$th-order differential equation, we seek an $n$-parameter family of solutions
+
+  \item A solution of a differential equation that is free of parameters is called a particular solution
+
+  \item A solution that is not member of a family of solutions, and, therefore, cannot be obtained by specializing any of the parameters is called a singular solution
+
+\end{itemize}
+
+\end{document}
+

@@ -1,0 +1,127 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Differential Equations (MATH-294)
+% Professor: M. Shah
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article} 
+\usepackage{alphalph}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage[super]{nth}
+\usepackage{everysel}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{siunitx}
+\geometry{top=1.0in,bottom=1.0in,left=1.0in,right=1.0in}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+
+}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,      
+urlcolor=blue,
+citecolor=blue,
+}
+
+\urlstyle{same}
+
+
+\title{Fourier Cosine and Sine Series}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: Meetal Shah}
+
+% Mathematical Operations:
+
+% Sum: $$\sum_{n=a}^{b} f(x) $$
+% Integral: $$\int_{lower}^{upper} f(x) dx$$
+% Limit: $$\lim_{x\to\infty} f(x)$$
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item The definition of an even and odd function is defined in \eqref{1}
+
+    \begin{equation}
+      \begin{split}
+      \text{Even if } f(-x)=f(x)\\
+      \text{Odd if } f(-x)=-f(x)\\
+    \end{split}
+      \label{1}
+    \end{equation}
+
+  \item Some properties are:
+
+    \begin{enumerate}
+
+      \item The product of two even functions is even.
+
+      \item The product of two odd functions is even.
+
+      \item The product of an even function and an odd function is odd.
+
+      \item The sum (difference) of two even functions is even.
+
+      \item The sum (difference) of two odd functions is odd.
+
+      \item If $f$ is even, then $\int_{-a}^a f(x)\,dx=2\int_0^a f(x)\,dx$
+
+      \item If $f$ is odd, then $\int_{-a}^a f(x)\,dx=0$
+
+    \end{enumerate}
+
+  \item The Fourier Series of an even function $f$ defined on the interval $(-p,p)$ is the cosine series \eqref{2}
+
+    \begin{equation}
+      \begin{split}
+        f(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty} a_n\cos\frac{n\pi}{p}x\\
+        a_0=\frac{2}{p}\int_0^pf(x)\,dx\\
+      a_n=\frac{2}{p}\int_0^pf(x)\left(\cos\frac{n\pi}{p}x\right)\,dx\\
+      \end{split}
+      \label{2}
+    \end{equation}
+
+  \item The Fourier Series of an odd function $f$ defined on the interval $(-p,p)$ is the sine series \eqref{3}
+
+    \begin{equation}
+      \begin{split}
+        f(x)=\sum_{n=1}^{\infty} b_n\sin\frac{n\pi}{p}x\\
+      b_n=\frac{2}{p}\int_0^pf(x)\left(\sin\frac{n\pi}{p}x\right)\,dx\\
+      \end{split}
+      \label{3}
+    \end{equation}
+
+  \item Gibbs Phenomenon applies to points near discontinuities.
+
+  \item Half Range Expansions $-$ May be used to express $f$ on interval $0< x< L$ by using a ``dummy'' function setup.
+
+    \begin{enumerate}
+
+      \item Even Reflection $-$ Across $y$-axis, and then create a cosine series
+
+      \item Odd Reflection $-$ Across origin, and then create a sine series
+
+      \item Periodic $-$ Transform the function so it is periodic, then create a Fourier Series
+
+    \end{enumerate}
+
+\end{itemize}
+
+\end{document}
+

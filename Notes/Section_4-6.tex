@@ -1,0 +1,120 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Differential Equations (MATH-294)
+% Professor: M. Shah
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article} 
+\usepackage{alphalph}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage[super]{nth}
+\usepackage{everysel}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{siunitx}
+\geometry{top=1.0in,bottom=1.0in,left=1.0in,right=1.0in}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+
+}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,      
+urlcolor=blue,
+citecolor=blue,
+}
+
+\urlstyle{same}
+
+
+\title{Variation of Parameters}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: Meetal Shah}
+
+% Mathematical Operations:
+
+% Sum: $$\sum_{n=a}^{b} f(x) $$
+% Integral: $$\int_{lower}^{upper} f(x) dx$$
+% Limit: $$\lim_{x\to\infty} f(x)$$
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item The general solution of a first order linear DE is of form \eqref{1}
+
+    \begin{equation}
+      y=c_1e^{-\int P(x)\,dx}+e^{-\int P(x)\,dx}\int e^{\int P(x)\,dx}f(x)\,dx
+      \label{1}
+    \end{equation}
+
+  \item A way to attain a solution is \textbf{Variation of Parameters}.
+
+  \item For a second order DE, use $y_p(x)=u_1(x)y_1(x)+u_2(x)y_2(x)$
+
+  \item Cramer's Rule: \eqref{2}
+
+    \begin{equation}
+      \begin{split}
+        u_1'=&\frac{W_1}{W}=-\frac{y_2f(x)}{W}\\
+        u_2'=&\frac{W_2}{W}=-\frac{y_1f(x)}{W}\\
+        W=&\begin{vmatrix} y_1 & y_2 \\ y_1' & y_2' \end{vmatrix}\\
+        W_1=&\begin{vmatrix} 0 & y_2 \\ f(x) & y_2' \end{vmatrix}\\
+        W_2=&\begin{vmatrix} y_1 & 0 \\ y_1' & f(x) \end{vmatrix}\\
+      \end{split}
+      \label{2}
+    \end{equation}
+
+  \item Steps to solving a differential equation using Variation of Parameters:
+
+    \begin{enumerate}
+
+      \item Solve the auxiliary equation to obtain the complimentary function
+
+      \item Compute the Wronskian
+
+      \item Find the other Wronskians, $W_1$ and $W_2$
+
+      \item Integrate and solve for $u_1$ and $u_2$
+
+      \item Form the particular solution
+
+      \item Add to the complimentary solution and add
+
+    \end{enumerate}
+
+  \item A simplified for for solving this is:
+
+    \begin{equation}
+      \begin{split}
+        u_1(x) =-\int_{x_0}^x \frac{y_2(t)f(t)}{W(t)}\,dt \text{ and } & u_2(x)=\int_{x_0}^{x} \frac{y_1(t)f(t)}{W(t)}\,dt\\
+      \end{split}
+      \label{3}
+    \end{equation}
+
+  \item For a Third-Order DE:
+
+    $$W=\begin{vmatrix} y_1 & y_2 & y_3 \\ y_1' & y_2' & y_3' \\ y_1'' & y_2'' & y_3'' \end{vmatrix}$$
+    $$W_1=\begin{vmatrix} 0 & y_2 & y_3 \\ 0 & y_2' & y_3' \\ f(x) & y_2'' & y_3'' \end{vmatrix}$$
+    $$W_2=\begin{vmatrix} y_1 & 0 & y_3 \\ y_1' & 0 & y_3' \\ y_1'' & f(x) & y_3'' \end{vmatrix}$$
+    $$W_3=\begin{vmatrix} y_1 & y_2 & 0 \\ y_1' & y_2' & 0 \\ y_1'' & y_2'' & f(x) \end{vmatrix}$$
+
+\end{itemize}
+
+\end{document}
+

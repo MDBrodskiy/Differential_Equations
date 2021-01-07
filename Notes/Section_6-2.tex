@@ -1,0 +1,82 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Differential Equations (MATH-294)
+% Professor: M. Shah
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article} 
+\usepackage{alphalph}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage[super]{nth}
+\usepackage{everysel}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{siunitx}
+\geometry{top=1.0in,bottom=1.0in,left=1.0in,right=1.0in}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+
+}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,      
+urlcolor=blue,
+citecolor=blue,
+}
+
+\urlstyle{same}
+
+
+\title{Solutions About Ordinary Points}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: Meetal Shah}
+
+% Mathematical Operations:
+
+% Sum: $$\sum_{n=a}^{b} f(x) $$
+% Integral: $$\int_{lower}^{upper} f(x) dx$$
+% Limit: $$\lim_{x\to\infty} f(x)$$
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item A point $x=x_0$ is said to be an ordinary point of the differential of the differential equation $a_2(x)y''+a_1(x)y'+a_0(x)y=0$ if both coefficients $P(x)$ and $Q(x)$ in the standard form $y''+P(x)y'+Q(x)y=0$ are analytic (can be expressed as a series) at $x_0$. A point that is not an ordinary point is said to be a singular point of the DE. \eqref{1}
+
+    \begin{equation}
+      \begin{split}
+        P(x)=\frac{a_1(x)}{a_2(x)} \text{ and }& Q(x)=\frac{a_0(x)}{a_2(x)}
+      \end{split}
+      \label{1}
+    \end{equation}
+
+  \item A point is ordinary as long as $a_2(x)\neq0$ at $x_0$\footnote{NOTE: singular points do not have to real. For example, in $(x^2+1)y''+xy'-y=0$, $x^2+1$ has roots $\pm1$}
+
+  \item If $x=x_0$ is an ordinary point of the differential equation, we can always find two linearly independent solutions in the form of a power series centered at $x_0$, that is \eqref{2}. A power series solution converges at least on some interval defined by $|x-x_0|<R$, where $R$ is the distance from $x_0$ to the closest singular point.
+
+    \begin{equation}
+      y=\sum_{n=0}^{\infty} c_n(x-x_0)^n
+      \label{2}
+    \end{equation}
+
+  \item A solution about the ordinary point $x_0$ is a solution of form \eqref{2}
+
+\end{itemize}
+
+\end{document}
+

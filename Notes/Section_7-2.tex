@@ -1,0 +1,81 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Differential Equations (MATH-294)
+% Professor: M. Shah
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article} 
+\usepackage{alphalph}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage[super]{nth}
+\usepackage{everysel}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{siunitx}
+\geometry{top=1.0in,bottom=1.0in,left=1.0in,right=1.0in}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+
+}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,      
+urlcolor=blue,
+citecolor=blue,
+}
+
+\urlstyle{same}
+
+
+\title{Inverse Transforms and Transforms of Derivatives}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: Meetal Shah}
+
+% Mathematical Operations:
+
+% Sum: $$\sum_{n=a}^{b} f(x) $$
+% Integral: $$\int_{lower}^{upper} f(x) dx$$
+% Limit: $$\lim_{x\to\infty} f(x)$$
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item Some known values for inverse Laplace transforms, $\mathcal{L}^{-1}\{f(t)\}$, are shown:
+
+  \begin{equation}
+      \begin{split}
+        1&=\mathcal{L}^{-1}\left\{ \frac{1}{s} \right\}\\
+        t^n=\mathcal{L}^{-1}\left\{ \frac{n!}{s^{n+1}} \right\}\,\,\,\,&\,\,\,\, e^{at}=\mathcal{L}^{-1}\left\{ \frac{1}{s-a} \right\}\\
+        \sin kt=\mathcal{L}^{-1}\left\{ \frac{k}{s^2+k^2} \right\}\,\,\,\,&\,\,\,\, \cos kt=\mathcal{L}^{-1}\left\{ \frac{s}{s^2+k^2} \right\}\\
+        \sinh kt=\mathcal{L}^{-1}\left\{ \frac{k}{s^2-k^2} \right\}\,\,\,\,&\,\,\,\, \cosh kt=\mathcal{L}^{-1}\left\{ \frac{s}{s^2-k^2} \right\}\\
+      \end{split}
+      \label{1}
+    \end{equation}
+
+  \item If $f,f',\dots,f^{n-1}$ are continuous on $[0,\infty)$, and are of exponential order and if $f^{(n)}(t)$ is piecewise continuous on $[0,\infty)$, then \eqref{2} where $F(s)=\mathcal{L}\{f(t)\}
+
+    \begin{equation}
+      \mathcal{L}\{f^{(n)}(t)\}=s^nF(s)-s^{n-1}f(0)-s^{n-2}f'(0)-\dots-f^{(n-1)}(0)
+      \label{2}
+    \end{equation}
+
+\end{itemize}
+
+\end{document}
+

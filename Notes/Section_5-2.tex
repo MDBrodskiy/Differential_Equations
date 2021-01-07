@@ -1,0 +1,160 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Differential Equations (MATH-294)
+% Professor: M. Shah
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article} 
+\usepackage{alphalph}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage[super]{nth}
+\usepackage{everysel}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{siunitx}
+\geometry{top=1.0in,bottom=1.0in,left=1.0in,right=1.0in}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+
+}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,      
+urlcolor=blue,
+citecolor=blue,
+}
+
+\urlstyle{same}
+
+
+\title{Linear Models $-$ Boundary-Value Problems}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: Meetal Shah}
+
+% Mathematical Operations:
+
+% Sum: $$\sum_{n=a}^{b} f(x) $$
+% Integral: $$\int_{lower}^{upper} f(x) dx$$
+% Limit: $$\lim_{x\to\infty} f(x)$$
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item In the absence of any load on the beam (including its weight), a curve joining the centroids of all its cross sections is a straight line called the axis of symmetry
+
+  \item When a load is applied on a beam, the line connecting all centroids is called the deflection curve or elastic curve.o
+
+  \item An important formula relates the bending moment, $M(x)$ at a point $x$ on the beam is related to the load per unit length $w(x)$ \eqref{1}
+
+    \begin{equation}
+      \frac{d^2M}{dx^2}=w(x)
+      \label{1}
+    \end{equation}
+
+  \item The product $EI$ is called the flexural rigidity of the beam \eqref{2}
+
+    \begin{equation}
+      M(x)=EI\kappa
+      \label{2}
+    \end{equation}
+
+  \item From Calculus III, the curvature is $\kappa=\frac{y''}{[1+(y')^2]^{\frac{3}{2}}}$
+
+    \item When the deflection $y(x)$ is small, the slope $y'\approx0$ and so $\kappa\approx y''$, so formula \eqref{2} is $M(x)=EIy''$ This means that the equation may be written as \eqref{3}
+
+      \begin{equation}
+        EI\frac{d^4y}{dx^4}=w(x)
+        \label{3}
+      \end{equation}
+
+    \item Boundary conditions depend on how the ends of the beam are structured. Embedded or clamped at one end and free at the other means the beam is stuck at one point. Some things we can assume in such a case at the embedded end is:
+
+      \begin{enumerate}
+        \item $y(0)=0$ because there is no deflection
+
+        \item $y'(0)=0$ because the deflection curve is tangent to the $x$-axis (the slope is zero)
+
+        \item At the free end: $y''(L)=0$
+
+        \item $y'''(L)=0$
+
+      \end{enumerate}
+
+    \item There are three possible conditions for beams: embedded at both ends, embedded at one end, and simply supported at both ends
+
+      \begin{tabular}[h]{l c c}
+        Embedded & $y=0$ & $y'=0$\\
+        Free & $y''=0$ & $y'''=0$\\
+        Simply supported & $y=0$ & $y''=0$
+      \end{tabular}
+
+    \item The numbers $\lambda_n=\frac{n^2\pi^2}{L^2}$, where $n=1,2,3\dots$, for which a boundary-value problem possesses nontrivial solutions are known as eigenvalues
+
+    \item Nontrivial solutions that depend on these values of $\lambda_n$, $y_n(x)=c_2\sin\left(\frac{n\pi x}{L}\right)$ or simply $y_n(x)=\sin\left( \frac{n\pi x}{L} \right)$ are called eigenfunctions 
+    
+    \item The formula for a buckling, vertical column, where $P$ is the downward force is \eqref{4}
+
+      \begin{equation}
+        EI\frac{d^2y}{dx^2}+Py=0
+        \label{4}
+      \end{equation}
+
+    \item For vertical beams, $\lambda=\frac{P}{EI}$
+
+    \item The first value for which the vertical beam will buckle, or the Euler load, is $P_1=\frac{\pi^2EI}{L}$, and is known as the first buckling node
+
+    \item The simple linear second-order differential equation defined in \eqref{5} occurs over and over again in mathematics. 
+
+      \begin{equation}
+        y''+\lambda y=0
+        \label{5}
+      \end{equation}
+
+    \item In a spinning string, the total force at a point is:
+
+      \begin{equation}
+        F=T\sin\theta_2-T\sin\theta_1
+        \label{6}
+      \end{equation}
+
+    \item When angles $\theta_1$ and $\theta_2$ are small, $\sin\theta_2\approx\tan\theta_2$. Therefore, the tangent at a certain point is approximately the derivative, meaning that the derivative at the two points is approximately equal to the sin of the angle, or \eqref{7}
+
+      \begin{equation}
+        F\approx T[y'(x+\Delta x)-y(x)]
+        \label{7}
+      \end{equation}
+
+    \item Where $\rho$ is the unit density per length, and $a_c=r\omega^2$, and the height being $r=y$, then, with a small $\Delta x$, the equation for force becomes \eqref{8}
+
+      \begin{equation}
+        F\approx-(\rho\Delta x)y\omega^2
+        \label{8}
+      \end{equation}
+
+    \item Therefore, when $\Delta x$ is close to zero, the equation finally becomes \eqref{9}
+
+      \begin{equation}
+        T\frac{d^2y}{dx^2}+\rho\omega^2y=0
+        \label{9}
+      \end{equation}
+
+\end{itemize}
+
+\end{document}
+

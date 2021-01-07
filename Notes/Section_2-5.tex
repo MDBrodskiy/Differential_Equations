@@ -1,0 +1,84 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Differential Equations (MATH-294)
+% Professor: M. Shah
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article} 
+\usepackage{alphalph}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage[super]{nth}
+\usepackage{everysel}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{siunitx}
+\geometry{top=1.0in,bottom=1.0in,left=1.0in,right=1.0in}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+
+}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,      
+urlcolor=blue,
+citecolor=blue,
+}
+
+\urlstyle{same}
+
+
+\title{Solutions by Substitutions}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: Meetal Shah}
+
+% Mathematical Operations:
+
+% Sum: $$\sum_{n=a}^{b} f(x) $$
+% Integral: $$\int_{lower}^{upper} f(x) dx$$
+% Limit: $$\lim_{x\to\infty} f(x)$$
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item Often the first step in solving a differential equation consists of transforming it into another differential equation by means of a \textbf{substitution}
+
+  \item \textbf{Homogeneous Function} $-$ A function $f$ that possesses the property $f(tx,ty)=t^{\alpha}f(x,y)$ for some real number $\alpha$
+
+    $$M(x,y)\,dx+N(x,y)\,dy=0$$
+
+  \item Is homogeneous if both coefficient functions $M$ and $N$ are homogeneous functions of the same degree.
+
+  \item Either substitution, $y=ux$ or $x=vy$, will reduce a homogeneous equation to a separable first-order differential equation.
+
+  \item \textbf{Bernoulli's Equation} $-$ An equation which fits the following form, where $n$ is any real number:
+
+    $$\frac{dy}{dx}+P(x)y=f(x)y^n$$
+
+  \item To solve differential equations with the given form, substitute:
+
+    $$u=y^{1-n}$$
+
+  \item \textbf{Reduction to Separation of Variables} $-$ A differential equation of the following form may be reduced to separation of variables when substituted with $u=Ax+By+C, B\neq0$
+
+    $$\frac{dy}{dx}=f(Ax+By+C)$$
+
+\end{itemize}
+
+\end{document}
+

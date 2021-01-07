@@ -1,0 +1,108 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Differential Equations (MATH-294)
+% Professor: M. Shah
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article} 
+\usepackage{alphalph}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage[super]{nth}
+\usepackage{everysel}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{siunitx}
+\geometry{top=1.0in,bottom=1.0in,left=1.0in,right=1.0in}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+
+}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,      
+urlcolor=blue,
+citecolor=blue,
+}
+
+\urlstyle{same}
+
+
+\title{Undetermined Coefficients $-$ Annihilator Approach}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: Meetal Shah}
+
+% Mathematical Operations:
+
+% Sum: $$\sum_{n=a}^{b} f(x) $$
+% Integral: $$\int_{lower}^{upper} f(x) dx$$
+% Limit: $$\lim_{x\to\infty} f(x)$$
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item An $n$th-order differential equation can be written in form \eqref{1}, where $D^ky=d^ky/dx^k$ 
+
+    \begin{equation}
+      a_nD^ny+a_{n-1}D^{n-1}y+\dots+a_1Dy+a_0y=g(x)
+      \label{1}
+    \end{equation}
+
+  \item Operators may be factored just like polynomial equations: \eqref{2}
+
+    \begin{equation}
+      (D^2+5D+6)y = (D+3)(D+2)y
+      \label{2}
+    \end{equation}
+
+  \item The linear operator $L$ is said to be an \textbf{annihilator} if it has the property shown in \eqref{3}
+
+    \begin{equation}
+      L(f(x))=0
+      \label{3}
+    \end{equation}
+
+    \begin{itemize}
+
+      \item For example:
+
+      \item $D$ annihilates $y=k$ because $Dk=0$
+
+      \item $D^2$ annihilates $y=x$ because $D^2x=0$
+
+      \item $D^3$ annihilates $y=x^2$ because $D^3x^2=0$
+
+    \end{itemize}
+
+  \item Some common annihilators are listed:
+
+    \begin{equation}
+      \begin{split}
+        D^n \text{ annihilates } & x^{n-1}\\
+        (D-\alpha)^n \text{ annihilates } & x^{n-1}e^{\alpha x}\\
+        [D^2-2\alpha D+(\alpha^2+\beta^2)]^n \text{ annihilates } & x^{n-1}e^{\alpha x} \cos \beta x,\, x^{n-1}e^{\alpha x} \sin \beta x
+      \end{split}
+      \label{4}
+    \end{equation}
+
+  \item Once the annihilator is solved for, the differential equation becomes homogeneous and can be easily solved
+
+\end{itemize}
+
+\end{document}
+

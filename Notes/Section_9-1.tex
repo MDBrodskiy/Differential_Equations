@@ -1,0 +1,102 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Differential Equations (MATH-294)
+% Professor: M. Shah
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article} 
+\usepackage{alphalph}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage[super]{nth}
+\usepackage{everysel}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{siunitx}
+\geometry{top=1.0in,bottom=1.0in,left=1.0in,right=1.0in}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+
+}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,      
+urlcolor=blue,
+citecolor=blue,
+}
+
+\urlstyle{same}
+
+
+\title{Euler Methods and Error Analysis}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: Meetal Shah}
+
+% Mathematical Operations:
+
+% Sum: $$\sum_{n=a}^{b} f(x) $$
+% Integral: $$\int_{lower}^{upper} f(x) dx$$
+% Limit: $$\lim_{x\to\infty} f(x)$$
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item The backbone of Euler's Method is formula \eqref{1}
+
+    \begin{equation}
+      y_{n+1}=y_n+hf(x_n,y_n)
+      \label{1}
+    \end{equation}
+
+  \item Round-off Error $-$ This error occurs when an object doing the calculating has an error due to the finite number of digits it displays.
+
+  \item Truncation Error $-$ An error that occurs at each step, and, therefore, carries over to the next step, until the calculator reaches a (total) truncation error.
+
+    \begin{itemize}
+
+      \item At a certain step, it is called \underline{local} truncation error, while, over the whole scope, it is called \under{global} truncation error.
+
+    \end{itemize}
+
+  \item When using Euler's method, the local truncation error can be found by using the formula for a Taylor's Series \eqref{2}, where $\frac{h^2}{2!}$ is known as the local truncation error.
+
+    \begin{equation}
+      y(x_{n+1})=y_n+hf(x_n,y_n)+y''(c)\frac{h^2}{2!}
+      \label{2}
+    \end{equation}
+
+  \item If $e(h)$ denotes the error in a numerical calculation depending on $h$ then $e(h)$ is said to be of order $h^n$, denoted by $O(h^n)$, if there exists a constant $C$ and a positive integer $n$ such that $|e(h)|\leq Ch^n$ for $h$ sufficiently small.
+
+  \item The improved Euler's Method is defined as \eqref{3}
+
+    \begin{equation}
+      \begin{split}
+      y_{n+1}=y_n+h\frac{f(x_n,y_n)+f(x_{n+1},y^*_{n-1})}{2}\\
+      y^*_{n+1}=y_n+hf(x_n,y_n)
+    \end{split}
+      \label{3}
+    \end{equation}
+
+  \item The improved Euler's Method is an example of a predictor-corrector method. The value of $y^*_{n+1}$ given by \eqref{3} predicts a value of $y(x_n)$, whereas the value of $y_{n+1}$ defined by formula \eqref{3} corrects this estimate. 
+
+  \item The local truncation error for the improved Euler's method is $O(h^3)$. The global truncation error, therefore, is $O(h^2)$
+
+\end{itemize}
+
+\end{document}
+

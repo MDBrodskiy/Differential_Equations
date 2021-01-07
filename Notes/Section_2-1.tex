@@ -1,0 +1,94 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Differential Equations (MATH-294)
+% Professor: M. Shah
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article} 
+\usepackage{alphalph}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage[super]{nth}
+\usepackage{everysel}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{siunitx}
+\geometry{top=1.0in,bottom=1.0in,left=1.0in,right=1.0in}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+
+}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,      
+urlcolor=blue,
+citecolor=blue,
+}
+
+\urlstyle{same}
+
+
+\title{Solution Curves Without a Solution}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: Meetal Shah}
+
+% Mathematical Operations:
+
+% Sum: $$\sum_{n=a}^{b} f(x) $$
+% Integral: $$\int_{lower}^{upper} f(x) dx$$
+% Limit: $$\lim_{x\to\infty} f(x)$$
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item The function $f$ in the normal form is called the slope function or rate function 
+
+    $$\frac{dy}{dx}=f(x,y)$$
+
+  \item Lineal Element $-$ An individual slope at a certain point
+
+  \item Direction Field (Slope Field) $-$ The collection of all lineal elements
+
+  \item Autonomous First-Order Differential Equation:
+
+    $$\frac{dy}{dx}=f(y)$$
+
+  \item Critical Points $-$ Also called equilibrium or stationary points, they are points, $c$, which, when plugged into a function, yield:
+
+    $$f(c)=0$$
+
+  \item Equilibrium Solution $-$ If $c$ is a critical point, then $y(x)=c$ is a constant solution of the autonomous differential equation. Equilibria are the only constant solutions
+
+  \item One-Dimensional Phase Portrait $-$ Simply called a phase portrait, it shows the intervals where a function is increasing and decreasing (essentially a sign chart). The line that the intervals are graphed on is named the phase line
+
+  \item Attractors and Repellers $-$ For a nonconstant solution, $y(x)$, there are basically three behaviors as it approaches some critical point, $c$. 
+    
+    \begin{enumerate}
+
+      \item Attractor $-$ When $\lim_{x\to\pm\infty}y(x)=c$. This means the critical point is asymptotically stable.
+
+      \item Repeller $-$ When both parts of a solution move away from a $c$ point. These are unstable.
+
+      \item Semi-stable $-$ When both parts either move up or down.
+
+    \end{enumerate}
+
+\end{itemize}
+
+\end{document}
+

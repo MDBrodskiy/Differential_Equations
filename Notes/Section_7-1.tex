@@ -1,0 +1,113 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Differential Equations (MATH-294)
+% Professor: M. Shah
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article} 
+\usepackage{alphalph}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage[super]{nth}
+\usepackage{everysel}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{siunitx}
+\geometry{top=1.0in,bottom=1.0in,left=1.0in,right=1.0in}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+
+}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,      
+urlcolor=blue,
+citecolor=blue,
+}
+
+\urlstyle{same}
+
+
+\title{Definition of the Laplace Transform}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: Meetal Shah}
+
+% Mathematical Operations:
+
+% Sum: $$\sum_{n=a}^{b} f(x) $$
+% Integral: $$\int_{lower}^{upper} f(x) dx$$
+% Limit: $$\lim_{x\to\infty} f(x)$$
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item Derivatives and integrals follow the linearity property, or, for constants $\alpha$ and $\beta$:
+
+    \begin{equation}
+      \begin{split}
+        \frac{d}{dx}[\alpha f(x) + \beta g(x)]&=\alpha f'(x) + \beta g'(x)\\
+        \int[\alpha f(x) + \beta g(x)]\,dx&=\alpha \int f(x)\,dx+\beta\int g(x)\,dx
+      \end{split}
+      \label{1}
+    \end{equation}
+
+  \item Integral transforms are done as such:
+
+    \begin{equation}
+      \int_0^{\infty} K(s,t)f(t)\,dt=\lim_{b\to\infty}\int_0^b K(s,t)f(t)\,dt
+      \label{2}
+    \end{equation}
+
+  \item The Laplace Transform is defined as, where $K(s,t)$ is the kernel of the transform:
+
+    \begin{equation}
+      \mathcal{L} =\int_0^{\infty}e^{-st}f(t)\,dt\\
+      \label{3}
+    \end{equation}
+
+  \item Then, for two different functions, the Laplace transform would be \eqref{4}, which means it is a linear transform
+
+    \begin{equation}
+      \mathcal{L}\{\alpha f(x) + \beta g(x)\}=\alpha \int e^{-st}f(x)\,dx+\beta\int e^{-st}g(x)\,dx
+      \label{4}
+    \end{equation}
+
+  \item Laplace Transforms for common functions:
+
+    \begin{equation}
+      \begin{split}
+        \mathcal{L}\{1\}&=\frac{1}{s}\\
+        \mathcal{L}\{t^n\}=\frac{n!}{s^{n+1}}\,\,\,\,&\,\,\,\, \mathcal{L}\{e^{at}\}=\frac{1}{s-a}\\
+        \mathcal{L}\{\sin kt\}=\frac{k}{s^2+k^2}\,\,\,\,&\,\,\,\, \mathcal{L}\{\cos kt\}=\frac{s}{s^2+k^2}\\
+        \mathcal{L}\{\sinh kt\}=\frac{k}{s^2-k^2}\,\,\,\,&\,\,\,\, \mathcal{L}\{\cosh kt\}=\frac{s}{s^2-k^2}\\
+      \end{split}
+      \label{5}
+    \end{equation}
+
+  \item For a Laplace Transform to exist, the function presented must be piecewise continuous and of exponential order
+
+  \item A function $f$ is said to be of exponential order if there exist constants, $c$, $M>0$, and $T>0$ such that $|f(t)|\leq Me^{ct}$ for all $t>T$
+
+  \item If $f$ is piecewise continuous on $[0,\infty)$ and of exponential order, then $\mathcal{L}\{f(t)\}$ exists for $s>c$
+
+  \item If $f$ is piecewise continuous on $[0,\infty)$ and of exponential order and $F(s)=\mathcal{L}\{f(t)\}$, then $\lim_{s\to\infty}F(s)=0$
+
+\end{itemize}
+
+\end{document}
+

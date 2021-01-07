@@ -1,0 +1,287 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Differential Equations (MATH-294)
+% Professor: M. Shah
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article} 
+\usepackage{alphalph}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage[super]{nth}
+\usepackage{everysel}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{siunitx}
+\geometry{top=1.0in,bottom=1.0in,left=1.0in,right=1.0in}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+
+}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,      
+urlcolor=blue,
+citecolor=blue,
+}
+
+\urlstyle{same}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead[\textsc{Fall 2020}]{\textsc{Fall 2020}}
+\chead[\textit{Differential Equations Exam 2 Equation Sheet}]{\textit{Differential Equations Exam 2 Equation Sheet}}
+\rhead[\textsc{Math-294}]{\textsc{Math-294}}
+\cfoot[\thepage]{\thepage}
+
+
+% Mathematical Operations:
+
+% Sum: $$\sum_{n=a}^{b} f(x) $$
+% Integral: $$\int_{lower}^{upper} f(x) dx$$
+% Limit: $$\lim_{x\to\infty} f(x)$$
+
+\begin{document}
+
+\begin{multicols}{2}
+
+  \begin{equation}
+    \begin{split}
+      W(f_1,f_2,f_n)&=\begin{vmatrix} f_1 & f_2 & f_n \\ f_1' & f_2' & f_n' \\ \vdots & \vdots & \vdots \\ f_1^{n-1} & f_2^{n-1} & f_n^{n-1}\\ \end{vmatrix}\\
+    \text{If }W(f)\neq0\text{, } $f$& \text{ is linearly independent}
+      \end{split}
+    \label{1}
+  \end{equation}
+
+  \begin{equation}
+    \begin{split}
+      y_2=y_1(x)&\int\frac{e^{-\int P(x)\,dx}}{(y_1(x))^2}\,dx\\
+    \text{Where $y_1(x)$ is a}& \text{ known function}\\
+  \text{And $P(x)$ is the}& \text{ coefficient of $y'$}
+    \end{split}
+    \label{2}
+  \end{equation}
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+  \begin{equation}
+    \begin{split}
+      \alpha\pm \beta i&\Rightarrow e^{\alpha x}\left( c_1\cos(\beta x)+c_2\sin(\beta x) \right)\\
+    \beta i&\Rightarrow  c_1\cos(\beta x)+c_2\sin(\beta x) \\
+      \alpha, \beta&\Rightarrow c_1e^{\alpha x}+c_2e^{\beta x}\\ 
+      \alpha &\Rightarrow c_1e^{\alpha x}+c_2xe^{\alpha x}\\ 
+    \end{split}
+    \label{3}
+  \end{equation}
+
+  \begin{equation}
+      \begin{split}
+        D^n\text{; } & x^{n-1}\\
+        (D-\alpha)^n\text{; } & x^{n-1}e^{\alpha x}\\
+        [D^2-2\alpha D+\alpha^2+\beta^2]^{n}\text{; }& x^{n-1}e^{\alpha x} \cos \beta x
+    \end{split}
+      \label{4}
+    \end{equation}
+
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+  \begin{equation}
+    \begin{split}
+      u_1'=\frac{W_1}{W}=&-\frac{y_2f(x)}{W}\\
+      u_2'=\frac{W_2}{W}=&-\frac{y_1f(x)}{W}\\
+      W =&\begin{vmatrix} y_1 & y_2 \\ y_1' & y_2'  \end{vmatrix}\\
+      W_1 =&\begin{vmatrix} 0 & y_2 \\ f(x) & y_2'  \end{vmatrix}\\
+      W_2 =&\begin{vmatrix} y_1 & 0 \\ y_1' & f(x)  \end{vmatrix}\\
+    \end{split}
+    \label{5}
+  \end{equation}
+
+  \begin{equation}
+    \begin{split}
+      u_1(x)=-\int_{x_0}^x \frac{y_2(t)f(t)}{W(t)}\,dt\\
+      u_2(x)=\int_{x_0}^x \frac{y_1(t)f(t)}{W(t)}\,dt\\
+      y_p(x)=u_1(x)y_1(x)+u_2(x)y_2(x)\\
+      \text{$y_1(x)$ is complementary function 1}\\
+    \text{$y_2(x)$ is complementary function 2}\\
+    \text{$f(x)$ is the right-side function of } x\\
+    \end{split}
+    \label{6}
+  \end{equation}
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+  \begin{equation}
+    \begin{split}
+      \lambda^2-\omega^2>0&\\
+      m_{1,2}=-\lambda \pm\sqrt{\lambda^2-\omega^2}\\
+      x(t)=e^{-\lambda t}\left(c_1e^{\sqrt{\lambda^2-\omega^2}t}+c_2e^{-\sqrt{\lambda^2-\omega^2}} \right)\\
+    \end{split}
+    \label{7}
+  \end{equation}
+
+  \begin{equation}
+    \begin{split}
+     \lambda^2-\omega^2=0\\
+      m_{1,2}=0\\
+      x(t)=e^{-\lambda t}(c_1+c_2t)\\
+    \end{split}
+    \label{8}
+  \end{equation}
+
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+  \begin{equation}
+    \begin{split}
+      \lambda^2-\omega^2<0\\
+      m_{1,2}=-\lambda \pm\sqrt{\omega^2-\lambda^2}i\\
+      A=\sqrt{\omega^2-\lambda^2}\\
+      x(t)=e^{-\lambda t}\left(c_1\cos At+c_2\sin At\right)\\
+    \end{split}
+    \label{9}
+  \end{equation}
+
+  \begin{equation}
+    \begin{split}
+      \text{Spring Parallel: } k_eff=k_1+k_2\\
+      \text{Spring Series: } k_eff=\frac{k_1k_2}{k_1+k_2}\\
+    \frac{d^2x}{dt^2}+\omega^2x=0\\
+    x(t)=c_1\cos\omega t+ c_2\sin\omega t\\
+    A\sin(\omega t+\phi)
+    \end{split}
+    \label{10}
+  \end{equation}
+
+\end{multicols}
+
+\vspace{45pt}
+
+\hline
+
+\newpage
+
+\begin{multicols}{2}
+
+  \begin{equation}
+    \begin{split}
+      \text{Inductor (\text{henries}): } L\frac{di}{dt}\\
+      \text{Resistor (\text{ohms}): } iR\\
+      \text{Capacitor (\text{farads}): } q\frac{1}{C}\\
+      L\frac{d^2q}{dt^2}+R\frac{dq}{dt}+q\frac{1}{C}=E(t)\\
+      R\neq0\text{ then } q_c(t) \text{ is transient}\\
+      E(t)\text{ is } \cos, \sin, c\rightarrow q_p(t) \text{ steady-state}
+    \end{split}
+    \label{11}
+  \end{equation}
+
+  \begin{equation}
+    \begin{split}
+      \text{Overdamped if: }\\
+      R^2-\frac{4L}{C}>0\\
+      \text{Critically Damped if: }\\
+      R^2-\frac{4L}{C}=0\\
+      \text{Underdamped if: }\\
+      R^2-\frac{4L}{C}<0\\
+    \end{split}
+    \label{12}
+  \end{equation}
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+  \begin{equation}
+    \begin{split}
+      \text{Embedded: } y=0,\,y'=0\\
+      \text{Free: } y''=0,\,y'''=0\\
+      \text{Simply Supported: } y=0,\,y''=0\\
+      \text{Horizontal Column: } EI\frac{d^4y}{dx^4}=\omega(x)\\
+      \text{Vertical Column: } EI\frac{d^2y}{dx^2}+Py=0\\
+      \text{Euler Load: } \frac{\pi^2EI}{L}
+    \end{split}
+    \label{13}
+  \end{equation}
+
+  \begin{equation}
+    \begin{split}
+      y(0)=0,\,y(L)=0:\\
+      \lambda_n=\frac{\pi^2n^2}{L^2}\\
+      y_n(x)=\sin\left( \frac{n\pi}{L}x \right)\\
+      y(0)=0,\,y'(L)=0\\
+      \lambda_n=\frac{(2n-1)^2\pi^2}{4L^2}\\
+      y_n(x)=\sin\left( \frac{(2n-1)\pi x}{2L} \right)
+    \end{split}
+    \label{14}
+  \end{equation}
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+  \begin{equation}
+    \begin{split}
+      \text{For a twirling rope:}\\
+      T\frac{d^2y}{dx^2}+\rho\omega^2y=0\\
+      \text{Where $T$ is the tension force}\\
+      \text{$\rho$ is the density per unit length}\\
+      \text{and $\omega$ is the angular velocity}\\
+    \end{split}
+    \label{15}
+  \end{equation}
+
+  \begin{equation}
+    \begin{split}
+      y=\sum_{n=0}^{\infinity} c_nx^n\\
+      y'=\sum_{n=1}^{\infinity} nc_nx^{n-1}\\
+      y''=\sum_{n=2}^{\infinity} n(n-1)c_nx^{n-2}\\
+    \end{split}
+    \label{16}
+  \end{equation}
+
+\end{multicols}
+
+\begin{equation}
+  \begin{split}
+%C \text{ (constant) }\rightarrow y_p(x)=A\\
+%5x+7\rightarrow Ax+B\\
+%3x^2-2\rightarrow Ax^2+Bx+C\\
+x^3-x+1\rightarrow y_p(x)=Ax^3+Bx^2+Cx+E\\
+\sin 4x \rightarrow y_p(x)=A\cos 4x + B\sin 4x\\
+\cos 4x \rightarrow y_p(x)=A\cos 4x + B\sin 4x\\
+%e^{5x}\rightarrow Ae^{5x}\\
+%(9x-2)e^{5x}\rightarrow (Ax+B)e^{5x}\\
+x^2e^{5x}\rightarrow y_p(x)=(Ax^2+Bx+C)e^{5x}\\
+%e^{3x}\sin 4x\rightarrow Ae^{3x}\cos 4x + Be^{3x}\sin 4x\\
+5x^2\sin 4x \rightarrow y_p(x)=(Ax^2+Bx+C)\cos 4x + (Ex^2+Fx+G)\sin 4x\\
+xe^{3x}\cos 4x\rightarrow y_p(x)=(Ax+B)e^{3x}\cos 4x + (Cx+E)e^{3x}\sin 4x
+\end{split}
+  \label{17}
+\end{equation}
+
+\vfill
+
+\hline
+
+\end{document}
+

@@ -1,0 +1,114 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Differential Equations (MATH-294)
+% Professor: M. Shah
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article} 
+\usepackage{alphalph}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage[super]{nth}
+\usepackage{everysel}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{siunitx}
+\geometry{top=1.0in,bottom=1.0in,left=1.0in,right=1.0in}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+
+}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,      
+urlcolor=blue,
+citecolor=blue,
+}
+
+\urlstyle{same}
+
+
+\title{Exact Equations}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: Meetal Shah}
+
+% Mathematical Operations:
+
+% Sum: $$\sum_{n=a}^{b} f(x) $$
+% Integral: $$\int_{lower}^{upper} f(x) dx$$
+% Limit: $$\lim_{x\to\infty} f(x)$$
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item Recall that the \textbf{differential} is defined as:
+
+    $$dz=\frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy$$
+
+  \item $f(x,y)=c$ is said to be a solution of the differential equation:
+
+    $$dz=\frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy$$
+
+  \item A differential expression $M(x,y)\,dx+N(x,y)\,dy$ is an exact differential if it corresponds to the differential of some function $f(x,y)$.
+
+  \item $M(x,y)\,dx+N(x,y)\,dy$ is said to be an exact equation if the expression on the left-hand side is an exact differential
+
+  \item If $M(x,y)$ and $N(x,y)$ are continuous and have continuous first partial derivatives, then, to be an exact differential:
+
+    $$\frac{\partial M}{\partial y}=\frac{\partial N}{\partial x}$$
+
+  \item If the equality above holds true, then a solution exists for a function $f$ for which:
+
+    $$\frac{\partial f}{\partial x}=M(x,y)$$
+
+  \item We can find $f$ by integrating $M(x,y)$ with respect to $x$ while holding $y$ constant:
+
+    $$f(x,y)=\int M(x,y)\,dx+g(y) \text{ where $g(y)$ represents the ``constant'' of integration}$$
+
+  \item This can be confirmed when we differentiate with respect to $x$:
+
+    $$\frac{\partial f(x,y)}{\partial x}=\frac{\partial}{\partial x}\int M(x,y)\,dx+ \frac{\partial g(y)}{\partial x}$$
+    $$\frac{\partial f(x,y)}{\partial x}= M(x,y)$$
+
+  \item And when we differentiate with respect to $y$:
+
+    
+    $$\frac{\partial f(x,y)}{\partial y}=\frac{\partial}{\partial y}\int M(x,y)\,dx+ \frac{\partial g(y)}{\partial y}$$
+    $$\frac{\partial f(x,y)}{\partial y}=\frac{\partial}{\partial y}\int M(x,y)\,dx+ g'(y)$$
+    $$g'(y)=N(x,y)-\frac{\partial}{\partial y}\int M(x,y)\,dx$$
+
+  \item The integrating factor technique may be used for exact equations as well:
+
+    $$\mu_xN-\mu_yM=(M_y-N_x)\mu$$
+
+  \item For $\mu_x=d\mu/dx, \mu_y=0$, then:
+
+    $$\frac{d\mu}{dx}=\frac{M_y-N_x}{N}\mu$$
+    $$\therefore \mu(x)=e^{\int\frac{M_y-N_x}{N}\,dx}$$
+
+\item If, conversely $\mu_y=d\mu/dy, \mu_x=0$, then:
+  
+    $$\frac{d\mu}{dy}=\frac{N_x-M_y}{M}\mu$$
+    $$\therefore \mu(y)=e^{\int\frac{N_x-M_y}{M}\,dy}$$
+    
+  \item This method may be used on non-exact DEs to make them exact
+
+\end{itemize}
+
+\end{document}
+

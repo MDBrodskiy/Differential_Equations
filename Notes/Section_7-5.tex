@@ -1,0 +1,94 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Differential Equations (MATH-294)
+% Professor: M. Shah
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article} 
+\usepackage{alphalph}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage[super]{nth}
+\usepackage{everysel}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{siunitx}
+\geometry{top=1.0in,bottom=1.0in,left=1.0in,right=1.0in}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+
+}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,      
+urlcolor=blue,
+citecolor=blue,
+}
+
+\urlstyle{same}
+
+
+\title{The Dirac Delta Function}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: Meetal Shah}
+
+% Mathematical Operations:
+
+% Sum: $$\sum_{n=a}^{b} f(x) $$
+% Integral: $$\int_{lower}^{upper} f(x) dx$$
+% Limit: $$\lim_{x\to\infty} f(x)$$
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item The Dirac Delta ``Function'' may be modeled by \eqref{1}
+
+    \begin{equation}
+      \delta(t-t_0)=\left\{\begin{array}{ll} 0,\, & 0\leq t < t_0-a\\ \frac{1}{2a},\, & t_0-a\leq t < t_0+a\\ 0,\, & t\geq t_0 + a\\ \end{array}
+      \label{1}
+    \end{equation}
+
+  \item This function could serve as a model for a big force exerted over little time (an impulse)
+
+  \item The impulse (force over time), or the area under the graph of the force always equals 1. This means that, for a shorter period of time, the force is greater
+
+  \item The function $\delta_a(t-t_0)$ is called the unit impulse, or the Dirac Delta Function. The limit that approximates this is defined as \eqref{2}
+
+    \begin{equation}
+      \delta (t-t_0)=\lim_{a\to0}\delta_a(t-t_0)
+      \label{2}
+    \end{equation}
+
+  \item The Laplace transform is defined as \eqref{3}
+
+    \begin{equation}
+      \mathcal{L}\left\{ \delta(t-t_0) \right\}=e^{-st_0}
+      \label{3}
+    \end{equation}
+
+  \item The integral of any function multiplied by the Dirac delta function is the function evaluated at the point $t_0$, or \eqref{4}
+
+    \begin{equation}
+      \int_a^{b} f(t)\delta(t-t_0)\,dt=f(t_0)
+      \label{4}
+    \end{equation}
+
+\end{itemize}
+
+\end{document}
+

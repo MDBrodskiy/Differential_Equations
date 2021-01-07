@@ -1,0 +1,195 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Differential Equations (MATH-294)
+% Professor: M. Shah
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article} 
+\usepackage{alphalph}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage[super]{nth}
+\usepackage{everysel}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{siunitx}
+\geometry{top=1.0in,bottom=1.0in,left=1.0in,right=1.0in}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+
+}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,      
+urlcolor=blue,
+citecolor=blue,
+}
+
+\urlstyle{same}
+
+
+\title{Modeling with Systems of First-Order DEs}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: Meetal Shah}
+
+% Mathematical Operations:
+
+% Sum: $$\sum_{n=a}^{b} f(x) $$
+% Integral: $$\int_{lower}^{upper} f(x) dx$$
+% Limit: $$\lim_{x\to\infty} f(x)$$
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item Say we are given two populations which interact, $x(t)$ and $y(t)$. The two differential equations \eqref{1} can be used to model population growth. A \textbf{linear system} would be of form \eqref{2}, where $c_i$ could depend on $t$. Any model of another form is said to be nonlinear.
+
+    \begin{equation}
+      \begin{split}
+        \frac{dx}{dt} & \frac{dy}{dt}
+      \end{split}
+      \label{1}
+    \end{equation}
+
+    \begin{equation}
+      \begin{split}
+        g_1(t,x,y) & = c_1x+c_2y+f_1(t) \\
+        g_2(t,x,y) & = c_3x+c_4y+f_2(t)
+      \end{split}
+      \label{2}
+    \end{equation}
+
+
+  \item Given different elements with radioactive decay, where $y$ is gaining atoms from decay of $x$ and itself decaying, it depends on $x$ and $y$ the differential equations \eqref{3}
+
+    \begin{equation}
+      \begin{split}
+        \frac{dx}{dt} & = -\lambda_1x \\
+        \frac{dy}{dt} & = \lambda_1x-\lambda_2y \\
+        \frac{dz}{dt} & = \lambda_2y 
+      \end{split}
+      \label{3}
+    \end{equation}
+
+  \item Say $x(t)$ and $y(t)$ are fox and rabbit populations, respectively. The model for the fox population, without rabbits, may be found using equation 4 \eqref{4}. If there are rabbits in the system, there could be a better model, equation 5 \eqref{5}. The rabbit population without any foxes present may be like \eqref{6}. The rabbit population with foxes in the system would be \eqref{7}. This is known as the \textbf{Lotka-Volterra predator-prey model}.
+
+    \begin{equation}
+      \begin{split}
+        \frac{dx}{dt} & = -ax \\
+      \end{split}
+      \label{4}
+    \end{equation}
+
+    \begin{equation}
+      \begin{split}
+        \frac{dx}{dt} & = -ax+bxy \\
+      \end{split}
+      \label{5}
+    \end{equation}
+
+    \begin{equation}
+      \begin{split}
+        \frac{dy}{dt} & = dy \\
+      \end{split}
+      \label{6}
+    \end{equation}
+
+    \begin{equation}
+      \begin{split}
+        \frac{dy}{dt} & = dy-cxy \\
+      \end{split}
+      \label{6}
+    \end{equation}
+
+  \item Say there are two species which are competing for some kind of condition. If the two species are in isolated environments, their population rates are modeled by \eqref{7} and \eqref{8}, respectively. If the two are present in the same system, their population rates may be modeled by \eqref{9} and \eqref{10}, respectively. If we assume that these species compete proportionally to each other, then the best model is \eqref{11} and \eqref{12}. Also, recalling back to Calculus II (or BC), a logistic curve is modeled by \eqref{13} and \eqref{14}. Combining what we know, the logistic curve and predator-prey model, we get the \textbf{competition model}, \eqref{15} and \eqref{16}.
+
+    \begin{equation}
+      \begin{split}
+        \frac{dx}{dt} & = ax \\
+      \end{split}
+      \label{7}
+    \end{equation}
+
+    \begin{equation}
+      \begin{split}
+        \frac{dy}{dt} & = cy \\
+      \end{split}
+      \label{8}
+    \end{equation}
+
+    \begin{equation}
+      \begin{split}
+        \frac{dx}{dt} & = ax-by \\
+      \end{split}
+      \label{9}
+    \end{equation}
+
+    \begin{equation}
+      \begin{split}
+        \frac{dy}{dt} & = cy-dx \\
+      \end{split}
+      \label{10}
+    \end{equation}
+
+    \begin{equation}
+      \begin{split}
+        \frac{dx}{dt} & = a_1x-b_1xy \\
+      \end{split}
+      \label{11}
+    \end{equation}
+
+    \begin{equation}
+      \begin{split}
+        \frac{dy}{dt} & = c_1y+d_1xy \\
+      \end{split}
+      \label{12}
+    \end{equation}
+
+    \begin{equation}
+      \begin{split}
+        \frac{dx}{dt} & = ax-bx^2 \\
+      \end{split}
+      \label{13}
+    \end{equation}
+
+    \begin{equation}
+      \begin{split}
+        \frac{dy}{dt} & = cy-dy^2 \\
+      \end{split}
+      \label{14}
+    \end{equation}
+
+    \begin{equation}
+      \begin{split}
+        \frac{dx}{dt} & = a_1x-b_1x^2-c_1xy \\
+        & x(a_1-b_1x-c_1y)
+      \end{split}
+      \label{15}
+    \end{equation}
+
+    \begin{equation}
+      \begin{split}
+        \frac{dy}{dt} & = a_2y-b_2y^2-c_2xy \\
+        & = y(a_2-b_2y-c_2x)
+      \end{split}
+      \label{16}
+    \end{equation}
+
+\end{itemize}
+
+\end{document}
+

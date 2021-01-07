@@ -1,0 +1,107 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Differential Equations (MATH-294)
+% Professor: M. Shah
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article} 
+\usepackage{alphalph}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage[super]{nth}
+\usepackage{everysel}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{siunitx}
+\geometry{top=1.0in,bottom=1.0in,left=1.0in,right=1.0in}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+
+}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,      
+urlcolor=blue,
+citecolor=blue,
+}
+
+\urlstyle{same}
+
+
+\title{Linear Equations}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: Meetal Shah}
+
+% Mathematical Operations:
+
+% Sum: $$\sum_{n=a}^{b} f(x) $$
+% Integral: $$\int_{lower}^{upper} f(x) dx$$
+% Limit: $$\lim_{x\to\infty} f(x)$$
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item A first-order linear differential equation takes the form:
+
+    $$a_1(x)\frac{dy}{dx}+a_0(x)y=g(x)$$
+
+  \item The standard form (where $P(x)=\frac{a_0(x)}{a_1(x)}$ and $f(x)=g(x)$) is as follows:
+
+      $$\frac{dy}{dx}+P(x)y=f(x)$$
+
+    \item The solution of such differential equations may be obtained by using the product rule:
+
+      $$\frac{d}{dx}[\mu(x)y]=\mu\frac{dy}{dx}+\frac{d\mu}{dx}y=\mu\frac{dy}{dx}+\mu Py$$
+      \begin{center} This is proven true when: \end{center}
+
+    $$\frac{d\mu}{dx}=\mu P,\text{ or } \mu(x)=c_2e^{\int P(x)\,dx}$$
+
+    \item This value is known as the integrating factor, $I$
+
+    \item Solving a Linear First-Order Equation
+
+      \begin{enumerate}
+
+        \item First, rearrange the equation into standard form
+
+        \item Find the integrating factor by locating $P(x)$
+
+        \item Multiply both sides by the integrating factor (and add constant $c$).
+
+        \item Then, solve for $y$
+
+      \end{enumerate}
+
+    \item Values of $x$ where $a_1(x)=0$ are known as singular points ($a_1(x)$ is the coefficient of $\frac{dy}{dx}$)
+
+    \item A transient term is one that approaches zero as $x$ approaches infinity (ex. $e^{-x}$)
+
+    \item When either $P(x)$ or $f(x)$ is a piecewise-defined function, the equation is said to be a piecewise-linear differential equation
+
+    \item Two important functions defined by integrals exist. These are the error function and the complimentary error function, respectively:
+
+      $$erf(x)=\frac{2}{\sqrt{\pi}}\int_0^x e^{-t^2}\,dt\,\,\,\,\,\,\,\, erfc(x)=\frac{2}{\sqrt{\pi}}\int_x^{\infty} e^{-t^2}\,dt$$
+      
+    \item These two functions are related by an identity:
+
+      $$erf(x)+erfc(x)=1$$
+
+\end{itemize}
+
+\end{document}
+

@@ -1,0 +1,156 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Differential Equations (MATH-294)
+% Professor: M. Shah
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article} 
+\usepackage{alphalph}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage[super]{nth}
+\usepackage{everysel}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{siunitx}
+\geometry{top=1.0in,bottom=1.0in,left=1.0in,right=1.0in}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+
+}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,      
+urlcolor=blue,
+citecolor=blue,
+}
+
+\urlstyle{same}
+
+
+\title{Orthogonal Functions}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: Meetal Shah}
+
+% Mathematical Operations:
+
+% Sum: $$\sum_{n=a}^{b} f(x) $$
+% Integral: $$\int_{lower}^{upper} f(x) dx$$
+% Limit: $$\lim_{x\to\infty} f(x)$$
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item Properties of inner (dot) product:
+
+    \begin{enumerate}
+
+      \item $\langle \bold{u}, \bold{v}\rangle=\langle \bold{v}, \bold{u}\rangle$
+
+      \item $\langle k\bold{u}, \bold{v}\rangle=k\langle \bold{v}, \bold{u}\rangle$, where $k$ is a scalar
+
+      \item $\langle \bold{u}, \bold{u}\rangle=0$ if $\bold{u}=0$ and $\langle \bold{u}, \bold{u}\rangle >0$ if $\bold{u}>0$
+
+      \item $\langle \bold{u}+\bold{v}, \bold{w}\rangle=\langle \bold{u},\bold{w}\rangle+\langle \bold{v},\bold{w}\rangle$
+
+    \end{enumerate}
+
+  \item The inner product of two functions $f_1$ and $f_2$ on an interval $[a,b]$ is a number given by \eqref{1}
+
+    \begin{equation}
+      (f_1,f_2)=\int_a^b f_1(x)f_2(x)\,dx
+      \label{1}
+    \end{equation}
+
+  \item Two functions $f_1$ and $f_2$ are orthogonal if \eqref{2} is true
+
+    \begin{equation}
+      (f_1,f_2)=\int_a^b f_1(x)f_2(x)\,dx=0
+      \label{2}
+    \end{equation}
+
+  \item A set of real-valued functions $\{\phi_0(x),\phi_1(x),\phi_2(x),\dots\}$ is said to be orthogonal on an interval $[a,b]$ if \eqref{3} and $m\neq n$
+
+    \begin{equation}
+      (\phi_m,\phi_n)=\int_a^b \phi_m(x)\phi_n(x)\,dx=0
+      \label{3}
+    \end{equation}
+
+  \item The square norm of a function $\phi_n$ is $||\phi_n(x)||^2=(\phi_n,\phi_n)$, meaning that the norm, or its generalized length, is $||\phi_n(x)||=\sqrt{(\phi_n,\phi_n)}$
+
+  \item The above means that \eqref{4}
+
+    \begin{equation}
+      \begin{split}
+        ||\phi_n(x)||^2&=\int_a^b \phi_n^2(x)\,dx\\
+        ||\phi_n(x)||&=\sqrt{\int_a^b \phi_n^2(x)\,dx}\\
+    \end{split}
+      \label{4}
+    \end{equation}
+
+  \item If $\{\phi_n(x)\}$ is an orthogonal set of functions on the interval $[a,b]$ with the additional property that $||\phi_n(x)||=1$ for $n=0,1,2\dots,$ then $\{\phi_n(x)\}$ is said to be an orthonormal set on the interval
+
+  \item The norm of $\phi_0(x)=1$ is $||\phi_0(x)||=\sqrt{2\pi}$
+
+  \item The process of normalizing a function set consists of dividing each function by its norm
+
+  \item Given the components $c_i$ where $i=1,2,3$, $\bold{u}=c_1\bold{v}_1+c_2\bold{v}_2+c_3\bold{v}_3$, each component may be found using \eqref{5}
+
+    \begin{equation}
+      \begin{split}
+        c_1&=\frac{\langle\bold{u},\bold{v}_1\rangle}{||v_1||^2}\\
+        c_2&=\frac{\langle\bold{u},\bold{v}_2\rangle}{||v_2||^2}\\
+        c_3&=\frac{\langle\bold{u},\bold{v}_3\rangle}{||v_3||^2}\\
+      \end{split}
+      \label{5}
+    \end{equation}
+
+  \item In inner product notation, each component may be found using \eqref{6}
+
+    \begin{equation}
+      \begin{split}
+      f(x)=\sum_{n=0}^{\infty}c_n\phi_n(x)\\
+      c_n=\frac{\int_a^bf(x)\phi_n(x)\,dx}{||\phi_n(x)||^2}
+    \end{split}
+      \label{6}
+    \end{equation}
+
+  \item A set of real-valued functions $\{\phi_0(x),\phi_1(x),\phi_2(x),\dots\}$ is said to be orthogonal with respect to a weight function $w(x)$ on an interval $[a,b]$ if \eqref{7}, where $w(x)$ is usually greater than zero
+
+    \begin{equation}
+      \int_a^bw(x)\phi_m(x)\phi_n(x)\,dx=0,\,\,\,\,\,\,m\neq n 
+      \label{7}
+    \end{equation}
+
+  \item If $\{\phi_n(x)\}$ is orthogonal with respect to a weight function $w(x)$ on the interval $[a,b]$, then multiplying the \eqref{6} by $w(x)\phi_n(x)$ and integrating yields \eqref{8} where \eqref{9}
+
+    \begin{equation}
+      c_n=\frac{\int_a^b f(x)w(x)\phi_n(x)\,dx}{||\phi_n(x)||^2}
+      \label{8}
+    \end{equation}
+
+    \begin{equation}
+      ||\phi_n(x)||^2=\int_a^bw(x)\phi_n^2(x)\,dx
+      \label{9}
+    \end{equation}
+
+
+\end{itemize}
+
+\end{document}
+

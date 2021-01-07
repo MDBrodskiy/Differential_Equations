@@ -1,0 +1,95 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Differential Equations (MATH-294)
+% Professor: M. Shah
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article} 
+\usepackage{alphalph}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage[super]{nth}
+\usepackage{everysel}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{siunitx}
+\geometry{top=1.0in,bottom=1.0in,left=1.0in,right=1.0in}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+
+}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,      
+urlcolor=blue,
+citecolor=blue,
+}
+
+\urlstyle{same}
+
+
+\title{A Numerical Method}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: Meetal Shah}
+
+% Mathematical Operations:
+
+% Sum: $$\sum_{n=a}^{b} f(x) $$
+% Integral: $$\int_{lower}^{upper} f(x) dx$$
+% Limit: $$\lim_{x\to\infty} f(x)$$
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item A \textbf{Euler's Method} \eqref{eq1} may be used to approximate values of a solution curve, as long as those points are relatively near the values used, and the step size, $h$, is not too big:
+
+    \begin{equation}
+      \begin{split}
+        y_{n+1}=y_n + hf(x_n,y_n)
+      \end{split}
+      \label{eq1}
+    \end{equation}
+
+  \item \textbf{Absolute Error} \eqref{eq2} gives you the deviation between the correct value and the value obtained from an approximation:
+
+    \begin{equation}
+      | value - approximation|
+      \label{eq2}
+    \end{equation}
+
+  \item The relative error \eqref{eq3} and percentage relative error \eqref{eq4} are shown below:
+
+    \begin{equation}
+      \frac{absolute}{|value|}
+      \label{eq3}
+    \end{equation}
+
+    \begin{equation}
+      \frac{absolute}{|value|}\cdot 100\%
+      \label{eq4}
+    \end{equation}
+
+  \item Euler's Method will not be used often, we will use the Runge-Kutta method for often.
+
+  \item A computer program made to graph or process numerical data is known as a numerical solver. Many computer programs can give corresponding approximations, or numerical solution curves.
+
+
+\end{itemize}
+
+\end{document}
+

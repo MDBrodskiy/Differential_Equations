@@ -1,0 +1,147 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Differential Equations (MATH-294)
+% Professor: M. Shah
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article} 
+\usepackage{alphalph}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage[super]{nth}
+\usepackage{everysel}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{siunitx}
+\geometry{top=1.0in,bottom=1.0in,left=1.0in,right=1.0in}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+
+}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,      
+urlcolor=blue,
+citecolor=blue,
+}
+
+\urlstyle{same}
+
+
+\title{Preliminary Theory $-$ Linear Equations}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: Meetal Shah}
+
+% Mathematical Operations:
+
+% Sum: $$\sum_{n=a}^{b} f(x) $$
+% Integral: $$\int_{lower}^{upper} f(x) dx$$
+% Limit: $$\lim_{x\to\infty} f(x)$$
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item Boundary-value Problem \eqref{1}:
+
+    \begin{equation}
+      \begin{split}
+        \text{Solve: }& a_2(x)\frac{d^2y}{dx^2}+a_1(x)\frac{dy}{dx}+a_0(x)y=g(x)\\
+        \text{Subject to: }& y(a)=y_0, y(b)=y_1\\
+      \end{split}
+      \label{1}
+    \end{equation}
+
+  \item $y(a)=y_0$ and $y(b)=y_1$ are called boundary values
+
+  \item If the function purely of $x$ (on the right side) in a linear differential equation is equal to zero, that function is called homogeneous. When the term is not zero, it is called nonhomogeneous.
+
+  \item The symbol $D$ is called the differential operator. Ex. \eqref{2}
+
+    \begin{equation}
+      \frac{d}{dx}\left( \frac{dy}{dx} \right)=\frac{d^2y}{dx^2}=D(D_y)=D^2y
+      \label{2}
+    \end{equation}
+
+  \item In addition to this, we can define an \textbf{$\bold{n}$th-order differential operator} or polynomial operator (or linear operator)to be \eqref{3}
+
+    \begin{equation}
+      L\{\alpha f(x)+\beta g(x)\}=\alpha L(f(x))+\beta L(g(x))
+      \label{3}
+    \end{equation}
+
+  \item An example which combines both aforementioned operators: Ex \eqref{4}
+
+    \begin{equation}
+      \begin{split}
+      y''+5y'+6y=5x-3\\
+      D^2y+5D_y+6y=5x-3\\
+    (D^2+5D+6)y=5x-3\\
+    L(y)=5x-3\\
+  \end{split}
+      \label{4}
+    \end{equation}
+
+  \item Many combinations of solutions may be found if $y_1,y_2\dots,y_k$ are solutions and are combined using a linear combination \eqref{5}
+
+    \begin{equation}
+      y=c_1y_1(x)+c_2y_2(x)+\dots+c_ky_k(x)
+      \label{5}
+    \end{equation}
+
+  \item A constant multiple $y=c_1y_1(x)$ of a solution $y_1(x)$ of a homogeneous differential equation is also a solution
+
+  \item A homogeneous linear differential equation always possesses the trivial solution $y=0$
+
+  \item A set of functions $f_1(x), f_2(x)\dots,f_n(x)$ is said to be linearly dependent on an interval $I$ if there exist constants $c_1,c_2,\dots,c_n$, not all zero such that:
+
+    $$c_1f_1(x)+c_2f_2(x)+\dots+c_nf_n(x)=0$$
+
+  \item For every $x$ in the interval. If the set of functions is not linearly dependent on the interval, it is said to be linearly independent.
+
+  \item The Wronskian: \eqref{6}
+
+    \begin{equation}
+      W(f_1,f_2,\dots,f_n)=\begin{vmatrix} f_1 & f_2 & \dots & f_n \\ f_1' & f_2' & \dots & f_n' \\ \vdots & \vdots & \dots & \vdots \\ f_1^{n-1} & f_2^{n-1} & \dots & f_n^{n-1} \\   \end{vmatrix}
+      \label{6}
+    \end{equation}
+
+  \item If the Wronskian does not equal zero, the solutions are said to be linearly independent
+
+  \item Any set $y_1, y_2, \dots, y_n$ of $n$ linearly independent solutions of the homogeneous linear $n$th-order differential equation on an interval $I$ is said to be a fundamental set of solutions on the interval
+
+  \item The general solution of the equation on the interval is \eqref{7}
+
+    \begin{equation}
+      y=c_1y_1(x)+c_2y_2(x)+\dots+c_ny_n(x)
+      \label{7}
+    \end{equation}
+
+  \item The general solution of the nonhomogeneous equation is \eqref{8}
+
+    \begin{equation}
+      \begin{split}
+        y & = \text{complementary function} + \text{particular solution}\\
+        & = y_c+y_p\\
+      \end{split}
+      \label{8}
+    \end{equation}
+
+\end{itemize}
+
+\end{document}
+

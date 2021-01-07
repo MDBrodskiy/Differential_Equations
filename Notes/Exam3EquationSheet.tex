@@ -1,0 +1,241 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Differential Equations (MATH-294)
+% Professor: M. Shah
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article} 
+\usepackage{alphalph}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage[super]{nth}
+\usepackage{everysel}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{siunitx}
+\geometry{top=1.0in,bottom=1.0in,left=1.0in,right=1.0in}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+
+}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,      
+urlcolor=blue,
+citecolor=blue,
+}
+
+\urlstyle{same}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead[\textsc{Fall 2020}]{\textsc{Fall 2020}}
+\chead[\textit{Differential Equations Exam 3 Equation Sheet}]{\textit{Differential Equations Exam 3 Equation Sheet}}
+\rhead[\textsc{Math-294}]{\textsc{Math-294}}
+\cfoot[\thepage]{\thepage}
+
+
+% Mathematical Operations:
+
+% Sum: $$\sum_{n=a}^{b} f(x) $$
+% Integral: $$\int_{lower}^{upper} f(x) dx$$
+% Limit: $$\lim_{x\to\infty} f(x)$$
+
+\begin{document}
+
+\begin{multicols}{2}
+
+  \begin{equation*}
+    \begin{split}
+      \text{Laplace Transform Definition:}\\
+      \mathcal{L}\left\{ f(t) \right\}=\int_0^{\infty}e^{-st}f(t)\,dt
+      \end{split}
+    \label{1}
+  \end{equation*}
+
+  \begin{equation*}
+    \begin{split}
+      \text{Unit Step Definition:}\\
+      \mathcal{U}(t-a)=\left\{\begin{array}{ll} 0, & 0\leq t < a\\ 1, & t \geq a \\ \end{array}
+    \end{split}
+    \label{2}
+  \end{equation*}
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+\begin{equation*}
+  \begin{split}
+    \underline{f(t)}\,\,\,\,&\vline\,\,\,\,\underline{F(s)}\\
+      1\,\,\,\,&\vline\,\,\,\,\frac{1}{s}\\
+      t^n\,\,\,\,&\vline\,\,\,\,\frac{n!}{s^{n+1}}\\
+      t^{-\frac{1}{2}}\,\,\,\,&\vline\,\,\,\,\sqrt{\frac{\pi}{s}}\\
+      t^{\frac{1}{2}}\,\,\,\,&\vline\,\,\,\,\frac{\sqrt{\pi}}{2s^{\frac{3}{2}}}\\
+      \sin (kt)\,\,\,\,&\vline\,\,\,\,\frac{k}{s^2+k^2}\\
+      \cos (kt)\,\,\,\,&\vline\,\,\,\,\frac{s}{s^2+k^2}\\
+      \sin^2(kt)\,\,\,\,&\vline\,\,\,\,\frac{2k^2}{s(s^2+4k^2)}\\
+      \cos^2(kt)\,\,\,\,&\vline\,\,\,\,\frac{s^2+2k^2}{s(s^2+4k^2)}\\
+      e^{\alpha t}\,\,\,\,&\vline\,\,\,\,\frac{1}{s-a}\\
+    \sinh (kt)\,\,\,\,&\vline\,\,\,\,\frac{k}{s^2-k^2}\\
+    \cosh (kt)\,\,\,\,&\vline\,\,\,\,\frac{s}{s^2-k^2}\\
+      \sinh^2 (kt)\,\,\,\,&\vline\,\,\,\,\frac{2k^2}{s(s^2-4k^2)}\\
+      \cosh^2 (kt)\,\,\,\,&\vline\,\,\,\,\frac{s^2-2k^2}{s(s^2-4k^2)}\\
+    t\sin(kt)\,\,\,\,&\vline\,\,\,\,\frac{2ks}{(s^2+k^2)^2}\\
+    t\cos(kt)\,\,\,\,&\vline\,\,\,\,\frac{s^2-k^2}{(s^2+k^2)^2}\\
+    \sin(kt)+kt\cos(kt)\,\,\,\,&\vline\,\,\,\,\frac{2ks^2}{(s^2+k^2)^2}\\
+    \sin(kt)-kt\cos(kt)\,\,\,\,&\vline\,\,\,\,\frac{2k^3}{(s^2+k^2)^2}\\
+    \delta(t-t_0)\,\,\,\,&\vline\,\,\,\,e^{-st_0}
+  \end{split}
+  \label{3}
+  \end{equation*}
+    
+\begin{equation*}
+  \begin{split}
+    \underline{f(t)}\,\,&\vline\,\,\underline{F(s)}\\
+    t\sinh(kt)\,\,&\vline\,\,\frac{2ks}{(s^2-k^2)^2}\\
+    t\cosh(kt)\,\,&\vline\,\,\frac{s^2+k^2}{(s^2-k^2)^2}\\
+    \frac{e^{at}-e^{bt}}{a-b}\,\,&\vline\,\,\frac{1}{(s-a)(s-b)}\\
+    \frac{ae^{at}-be^{bt}}{a-b}\,\,&\vline\,\,\frac{s}{(s-a)(s-b)}\\
+    1-\cos(kt)\,\,&\vline\,\,\frac{k^2}{s(s^2+k^2)}\\
+    kt-\sin(kt)\,\,&\vline\,\,\frac{k^3}{s^2(s^2+k^2)}\\
+    \frac{a\sin(bt)-b\sin(at)}{ab(a^2-b^2)}\,\,&\vline\,\,\frac{1}{(s^2+a^2)(s^2+b^2)}\\
+    \frac{\cos(bt)-\cos(at)}{a^2-b^2}\,\,&\vline\,\,\frac{s}{(s^2+a^2)(s^2+b^2)}\\
+    \sin(kt)\sinh(kt)\,\,&\vline\,\,\frac{2k^2s}{s^4+4k^4}\\
+    \sin(kt)\cosh(kt)\,\,&\vline\,\,\frac{k(s^2+2k^2)}{s^4+4k^4}\\
+    \cos(kt)\sinh(kt)\,\,&\vline\,\,\frac{k(s^2-2k^2)}{s^4+4k^4}\\
+    \cos(kt)\cosh(kt)\,\,&\vline\,\,\frac{s^3}{s^4+4k^4}\\
+    \frac{e^{bt}-e^{at}}{t}\,\,&\vline\,\,\ln\left(\frac{s-a}{s-b}\right)\\
+    e^{at}f(t)\,\,&\vline\,\,F(s-a)\\
+    \mathcal{U}(t-a)\,\,&\vline\,\,\frac{e^{-as}}{s}\\
+    f(t-a)\mathcal{U}(t-a)\,\,&\vline\,\,e^{-as}F(s)\\
+    f\ast g=\int_0^t f(\tau)g(t-\tau)\,d\tau\,\,&\vline\,\,F(s)G(s)\\
+    g(t)\mathcal{U}(t-a)\,\,&\vline\,\,e^{-as}\mathcal{L}\left\{ g(t+a) \right\}\\
+  \end{split}
+  \label{4}
+  \end{equation*}
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+  \begin{equation*}
+    \begin{split}
+      \text{Laplace Derivative Formulas:}\\
+      t^nf(t)=(-1)^n\frac{d^n}{ds^n}[F(s)]\\
+      \mathcal{L}\left\{ f^{(n)}(t) \right\}=s^nF(s)-s^{n-1}f(0)-s^{n-2}f'(0)
+    \end{split}
+    \label{5}
+  \end{equation*}
+
+  \begin{equation*}
+    \begin{split}
+      |\bold{A}-\lambda_n\bold{I}|\bold{K}&=0\\
+      \text{If a }k\text{ value is not explicitly zero,}\\
+      \text{assume it is equal to one}
+    \end{split}
+    \label{6}
+  \end{equation*}
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+  \begin{equation*}
+    \begin{split}
+      k_1&=f\left(x,y\right)\\
+      k_2&=f\left(x+\frac{h}{2},y+\frac{h\cdot k_1}{2}\right)\\
+      k_3&=f\left(x+\frac{h}{2},y+\frac{h\cdot k_2}{2}\right)\\
+      k_4&=f\left(x+h,y+h\cdot k_3\right)\\
+      RK4&=y+h\left( \frac{k_1}{6}+\frac{k_2}{3}+\frac{k_3}{3}+\frac{k_4}{6} \right)
+    \end{split}
+    \label{7}
+  \end{equation*}
+
+  \begin{equation*}
+    \begin{split}
+      \text{For &truncation errors:}\\
+      O(h^n)=y^{(n)}\left( c \right)&\frac{h^n}{n!}\\
+      O(h^4)\text{ for global &truncation on } RK4\\
+      O(h^5)\text{ for local &truncation on } RK4\\
+    \end{split}
+    \label{8}
+  \end{equation*}
+
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+  \begin{equation*}
+    \begin{split}
+      \text{Orthog&onal if:}\\
+      (\phi_m,\phi_n)&=\int_a^b \phi_m(x)\phi_n(x)\,dx=0
+    \end{split}
+    \label{9}
+  \end{equation*}
+
+  \begin{equation*}
+    \begin{split}
+      ||\phi_n(x)||^2&=\int_a^b \phi_n^2(x)\,dx\\
+      ||\phi_n(x)||&=\sqrt{\int_a^b \phi_n^2(x)\,dx}\\
+    \end{split}
+    \label{10}
+  \end{equation*}
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+  \begin{equation*}
+    \begin{split}
+      c_n&=\frac{\int_a^b f(x)w(x)\phi_n(x)\,dx}{||\phi_n(x)||^2}\\
+        ||\phi_n(x)||^2&=\int_a^b w(x)\phi_n^2(x)\,dx\\
+    \end{split}
+    \label{11}
+  \end{equation*}
+
+  \begin{equation*}
+    \begin{split}
+      f(x)&=\frac{a_0}{2}+\sum_{n=1}^{\infty}\left( a_n\cos\left( \frac{n\pi}{p}x \right)+b_n\sin\left( \frac{n\pi}{p}x \right) \right)\\
+      a_0&=\frac{1}{p}\int_{-p}^pf(x)\,dx\\
+      a_n&=\frac{1}{p}\int_{-p}^pf(x)\cos\left( \frac{n\pi}{p}x \right)\,dx\\
+      b_n&=\frac{1}{p}\int_{-p}^pf(x)\sin\left( \frac{n\pi}{p}x \right)\,dx\\
+    \end{split}
+    \label{12}
+  \end{equation*}
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+  \begin{equation*}
+    \begin{split}
+      \int_a^b f(t)\delta(t-t_0)\,dt=f(t_0)\\
+    \end{split}
+    \label{13}
+  \end{equation*}
+
+  \begin{equation*}
+    \begin{split}
+      \delta(t-t_0)&=\left\{\begin{array}{ll} 0, & 0\leq t <t_0-a\\ \frac{1}{2a}, & t_0-a\leq t < t_0+a\\ 0, & t\geq t_0+a \end{array}
+    \end{split}
+    \label{14}
+  \end{equation*}
+
+\end{multicols}
+
+\end{document}
+

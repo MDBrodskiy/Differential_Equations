@@ -1,0 +1,250 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Differential Equations (MATH-294)
+% Professor: M. Shah
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article} 
+\usepackage{alphalph}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage[super]{nth}
+\usepackage{everysel}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{siunitx}
+\geometry{top=1.0in,bottom=1.0in,left=1.0in,right=1.0in}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+
+}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,      
+urlcolor=blue,
+citecolor=blue,
+}
+
+\urlstyle{same}
+
+
+\title{Linear Models $-$ Initial-Value Problems}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: Meetal Shah}
+
+% Mathematical Operations:
+
+% Sum: $$\sum_{n=a}^{b} f(x) $$
+% Integral: $$\int_{lower}^{upper} f(x) dx$$
+% Limit: $$\lim_{x\to\infty} f(x)$$
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item This section will focus on several linear dynamical systems, modeled by second-order differential equations
+
+  \item The function $g$ is variously called the driving function, forcing function, or input of the system
+
+  \item A solution $y(t)$ of the differential equation on an interval $I$ containing $t=0$ that satisfies the initial conditions is called the response or output of the system
+
+  \item A Spring/Mass System:
+
+    \begin{enumerate}
+
+      \item Newton's Second Law: When a mass $m$ is attached to the lower end of a spring of negligible mass, it stretches the spring by an amount $s$ and attains an equilibrium position or rest position at which its weight $W$ is balanced by the restoring force $ks$ of the spring. Hooke's Law is shown in \eqref{1}
+        \begin{equation}
+          F=-kx
+          \label{1}
+        \end{equation}
+
+    \end{enumerate}
+
+  \item When the spring is in free motion, or when no external forces act on the system, Newton's second law gives \eqref{2}
+
+    \begin{equation}
+      m\frac{d^2x}{dt^2}=-k(x+s)+mg=-kx+mg-ks=-kx
+      \label{2}
+    \end{equation}
+
+  \item For simple harmonic motion, the differential equation looks like \eqref{3}, where $\omega^2=\frac{k}{m}$
+
+    \begin{equation}
+      \frac{d^2x}{dt^2}+\omega^2x=0
+      \label{3}
+    \end{equation}
+
+  \item The general solution for this type of equation is \eqref{4}
+
+    \begin{equation}
+      x(t)=c_1\cos \omega t + c_2\sin\omega t
+      \label{4}
+    \end{equation}
+
+  \item The period of motion can be found using $T=\frac{2\pi}{\omega}$. The frequency of motion is the inverse of the period, $f=\frac{\omega}{2\pi}$
+
+  \item The number $\omega=\sqrt{\frac{k}{m}}$ is the circular frequency, in radians per second
+
+  \item Functions in form \eqref{3} are problematic, though, because it is difficult to determine the amplitude. It can be rewritten in form \eqref{5} using $A=\sqrt{c_1^2+c_2^2}$, and $\phi$ is a phase angle which may be found using $\tan \phi = \frac{c_1}{c_2}
+
+    \begin{equation}
+      x(t)=A\sin(\omega t + \phi)
+      \label{5}
+    \end{equation}
+
+  \item Double Spring Systems:
+
+    \begin{enumerate}
+
+      \item Springs in parallel:
+
+    \begin{enumerate}
+
+      \item The effective spring constant is $k_{eff}=k_1+k_2$
+
+      \item Once $k_{eff}$ is found, the whole process is the same as a single-springed system
+
+    \end{enumerate}
+
+  \item Springs in series:
+
+    \begin{enumerate}
+
+      \item $-k_{eff}(x_1+x_2)=-k_1x_1=-k_2x_2$, because the force exerted on each spring is the same
+
+      \item Simplifying this, we get $k_{eff}=\frac{k_1k_2}{k_1+k_2}$
+
+    \end{enumerate}
+
+\end{enumerate}
+
+\item Systems with Variable Spring Constants
+
+  \begin{enumerate}
+
+    \item Aging Spring Function is shown in \eqref{6}
+
+      \begin{equation}
+        K(t)=ke^{-\alpha t}
+        \label{6}
+      \end{equation}
+
+    \item In an environment where the temperature is rapidly decreasing, $K(t)=kt$, and Airy's differential equation can be used to model this: \eqref{7}
+
+      \begin{equation}
+        mx''+ktx=0
+        \label{7}
+      \end{equation}
+
+  \end{enumerate}
+
+\item In damped motion, the object has a retarding force act on it
+
+\item For damped motion, the object follows the differential equation \eqref{8}, and can be rewritten as \eqref{9}
+
+  \begin{equation}
+    m\frac{d^2x}{dt^2}=-kx-\beta\frac{dx}{dt}
+    \label{8}
+  \end{equation}
+
+  \begin{equation}
+    \begin{split}
+      \frac{d^2x}{dt^2}+\frac{\beta}{m}\frac{dx}{dt}+\frac{k}{m}x&=0\\
+      \frac{d^2x}{dt^2}+2\lambda\frac{dx}{dt}+\omega^2x&=0\\
+      2\lambda=\frac{\beta}{m} \text{ and } \omega^2=\frac{k}{m}
+    \end{split}
+    \label{9}
+  \end{equation}
+
+\item Therefore, for the differential equation shown in equation \eqref{9}, the terms of the complementary solution can be found using \eqref{10}
+
+  \begin{equation}
+    \begin{split}
+      \text{Case One (Overdamped): }& \lambda^2-\omega^2>0\\
+      m_{1,2}&=-\lambda \pm\sqrt{\lambda^2-\omega^2}\\
+      x(t)&=e^{-\lambda t}\left(c_1e^{\sqrt{\lambda^2-\omega^2}t}+c_2e^{-\sqrt{\lambda^2-\omega^2}} \right)\\
+      \text{Case Two (Critically Damped): }& \lambda^2-\omega^2=0\\
+      m_{1,2}&=0\\
+      x(t)&=e^{-\lambda t}(c_1+c_2t)\\
+      \text{Case Three (Underdamped): }& \lambda^2-\omega^2<0\\
+      m_{1,2}&=-\lambda \pm\sqrt{\omega^2-\lambda^2}i\\
+      x(t)&=e^{-\lambda t}\left(c_1\cos\sqrt{\omega^2-\lambda^2}t+c_2\sin\sqrt{\omega^2-\lambda^2}t\right)\\
+    \end{split}
+    \label{10}
+  \end{equation}
+
+\item For such problems, it is important to remember $g\approx32\left[  \frac{ft}{s}\right]$
+
+\item The term $Ae^{-\lambda t}$ is called the damped amplitude of vibrations. The quasi period and the quasi frequency are defined as $\frac{2\pi}{\sqrt{\omega^2-\lambda^2}}$ and $\frac{\sqrt{\omega^2-\lambda^2}}{2\pi}$
+
+\item In a system with driven or forced motion, $f(t)$ is defined as a function representing a force at a time. The differential equation is then modified to be \eqref{11}
+
+  \begin{equation}
+    \frac{d^2x}{dt^2}=-2\lambda\frac{dx}{dt}-\omega^2x+f(t)
+    \label{11}
+  \end{equation}
+
+\item The complementary function is called the transient solution, while the particular  function is called the steady-state solution
+
+\item Driven motion without damping motion can be written in form \eqref{12}
+
+  \begin{equation}
+    \frac{d^2x}{dt^2}+\omega^2x=f(t)
+    \label{12}
+  \end{equation}
+
+\item When $\gamma=\omega$, the function reaches what is known as pure resonance
+
+\item Series Circuits in Analogue $-$ LRC-Series Circuits may be modelled by a second-order differential equation \eqref{13}
+
+  \begin{equation}
+    L\frac{d^2q}{dt^2}+R\frac{dq}{dt}+\frac{1}{C}q=E(t)
+    \label{13}
+  \end{equation}
+
+\item Inductor ($L$) $-$ Units of henries (h). Voltage drop across: $L\frac{di}{dt}$
+
+\item Resistor ($R$) $-$ Units of ohms ($\omega$). Voltage drop across: $iR$
+
+\item Capacitor ($C$) $-$ Units of farads (f). Voltage drop across: $q\frac{1}{C}$
+
+\item If the $E(t)$ function equals zero, the electrical vibrations of the circuit are saidd to be free. 
+
+\item The circuit is\dots
+
+  \begin{tabular}[h]{l r}
+    Overdamped if & $R^2-\frac{4L}{C}>0$\\
+    & \\
+    Critically damped if & $R^2-\frac{4L}{C}=0$\\
+    & \\
+    Underdamped if & $R^2-\frac{4L}{C}<0$\\
+  \end{tabular}
+
+\item When the equation is underdamped and $q(0)=q_0$, the charge of the capacitor oscillates as it decays.
+
+\item When $E(t)=0$ and $R=0$, the circuit is undamped and the circuit is in a simple harmonic state. 
+
+\item When there is an impressed voltage $E(t)$ on the circuit the electrical vibrations are said to be forced.
+
+\item In the case when $R\neq0$, the complementary function $q_c(t)$ is called a transient solution.
+
+\item If $E(t)$ is periodic or a constant, then the particular solution $q_p(t)$ is a steady-state solution.
+
+\end{itemize}
+
+\end{document}
+

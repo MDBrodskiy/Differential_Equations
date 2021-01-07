@@ -1,0 +1,93 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Differential Equations (MATH-294)
+% Professor: M. Shah
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article} 
+\usepackage{alphalph}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage[super]{nth}
+\usepackage{everysel}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{siunitx}
+\geometry{top=1.0in,bottom=1.0in,left=1.0in,right=1.0in}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+
+}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,      
+urlcolor=blue,
+citecolor=blue,
+}
+
+\urlstyle{same}
+
+
+\title{Fourier Series}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: Meetal Shah}
+
+% Mathematical Operations:
+
+% Sum: $$\sum_{n=a}^{b} f(x) $$
+% Integral: $$\int_{lower}^{upper} f(x) dx$$
+% Limit: $$\lim_{x\to\infty} f(x)$$
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item For any function defined on the interval $(-p,p)$, an expression can be obtained that looks like \eqref{1}
+
+    \begin{equation}
+    f(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}\left( a_n\cos\frac{n\pi}{p}x+b_n\sin\frac{n\pi}{p}x \right)
+      \label{1}
+    \end{equation}
+
+  \item The components of a Fourier Series may be found by using formulas \eqref{2}, \eqref{3}, and \eqref{4}
+
+    \begin{equation}
+      a_0=\frac{1}{p}\int_{-p}^pf(x)\,dx
+      \label{2}
+    \end{equation}
+
+    \begin{equation}
+      a_n=\frac{1}{p}\int_{-p}^pf(x)\cos\frac{n\pi x}{p}\,dx
+      \label{3}
+    \end{equation}
+
+    \begin{equation}
+      b_n=\frac{1}{p}\int_{-p}^pf(x)\sin\frac{n\pi x}{p}\,dx
+      \label{4}
+    \end{equation}
+
+  \item The series converges at the point defined by \eqref{5}
+
+    \begin{equation}
+      \frac{\lim_{h\to 0}f(x+h)+\lim_{h\to 0}f(x-h)}{2}
+      \label{5}
+    \end{equation}
+
+\end{itemize}
+
+\end{document}
+

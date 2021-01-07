@@ -1,0 +1,138 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Differential Equations (MATH-294)
+% Professor: M. Shah
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article} 
+\usepackage{alphalph}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage[super]{nth}
+\usepackage{everysel}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+\usepackage{siunitx}
+\geometry{top=1.0in,bottom=1.0in,left=1.0in,right=1.0in}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+
+}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,      
+urlcolor=blue,
+citecolor=blue,
+}
+
+\urlstyle{same}
+
+
+\title{Operational Properties II}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: Meetal Shah}
+
+% Mathematical Operations:
+
+% Sum: $$\sum_{n=a}^{b} f(x) $$
+% Integral: $$\int_{lower}^{upper} f(x) dx$$
+% Limit: $$\lim_{x\to\infty} f(x)$$
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item The derivative of a transform is: $\mathcal{L}\left\{ t^nf(t) \right\}=(-1)^n\frac{d^n}{ds^n}F(s)$
+
+  \item A convolution (f convolves g) is defined as \eqref{1}
+
+    \begin{equation}
+      f\ast g=\int_0^t f(\tau)g(t-\tau)\,d\tau
+      \label{1}
+    \end{equation}
+
+  \item For all examples, the Laplace transform of a convolution, or $\mathcal{L}\{f\ast g\}$, we obtain \eqref{2}
+
+    \begin{equation}
+      \begin{split}
+        \mathcal{L}\left\{ f\ast g \right\}=\mathcal{L}\left\{ f(t) \right\}\cdot\mathcal{L}\left\{ g(t) \right\}=F(s)G(s)
+      \end{split}
+      \label{2}
+    \end{equation}
+
+  \item Inversely, the inverse Laplace transform would mean \eqref{3}
+
+    \begin{equation}
+      f\ast g=\mathcal{L}^{-1}{F(s)G(s)}
+      \label{3}
+    \end{equation}
+  
+  \item When $g(t)=1$ and $\mathcal{L}\left\{ g(t) \right\}=G(s)=\frac{1}{s}$, the convolution theorem implies that the Laplace transform of the integral of $f$ is \eqref{4}
+
+    \begin{equation}
+      \begin{split}
+      \mathcal{L}\left\{ \int_0^t f(\tau)\,d\tau \right\}=\frac{F(s)}{s}\\
+      \int_0^t f(\tau)\,d\tau=\mathcal{L}^{-1}\left\{\frac{F(s)}{s}\right\}\\
+    \end{split}
+      \label{4}
+    \end{equation}
+
+  \item The Volterra integral equation for $f(t)$ is \eqref{5}
+
+    \begin{equation}
+      f(t)=g(t)+\int_0^t f(\tau)h(t-\tau)\,d\tau
+      \label{5}
+    \end{equation}
+
+  \item For LRC circuits, we could set up an integral equation to solve. This would look like \eqref{6}, which is known as an integrodifferential equation
+
+    \begin{equation}
+      L\frac{di}{dt}+Ri(t)+\frac{1}{C}\int_0^ti(\tau)\,d\tau=E(t)
+      \label{6}
+    \end{equation}
+
+  \item Green's Function Redux states that, given a differential equation, $y''+ay'+by=f(t)$, with $y(0)=0, y'(0)=0$, we attain \eqref{7}
+
+    \begin{equation}
+      Y(s)=\frac{F(s)}{s^2+as+b}
+      \label{7}
+    \end{equation}
+
+  \item From there, we can use convolution, as $\mathcal{L}^{-1}\left\{ \frac{1}{s^2+as+b} \right\}=g(t)$ and $\mathcal{L}^{-1}\left\{ F(s) \right\}=f(t)$
+
+  \item The transform of a periodic function becomes \eqref{8}
+
+    \begin{equation}
+      \mathcal{L}\left\{ f(t) \right\}=\frac{1}{1-e^{-sT}}\int_0^T e^{-st}f(t)\,dt
+      \label{8}
+    \end{equation}
+
+    \textit{Example:}
+
+    \begin{center}
+      Given $E(t)=\left\{\begin{array}{ll} 1 & 0\leq t< 1\\ 0 & 1\leq t <2 \end{array}$, find $\mathcal{L}\left\{ E(t) \right\}$
+    \end{center}
+
+    \begin{equation}
+      \mathcal{L}\left\{ E(t) \right\}=\frac{1}{1-e^{-2s}}\int_0^2e^{-st}E(t)\,dt
+      \label{9}
+    \end{equation}
+
+\end{itemize}
+
+\end{document}
+
